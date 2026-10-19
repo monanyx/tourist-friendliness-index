@@ -4,7 +4,7 @@
 
 Innsbruck's old town is full of tourists all year, but most of its restaurant and café websites still speak only German. This project audits what a non-German-speaking visitor can actually find online (languages, menus, allergen information, booking) and turns it into an open, interactive index.
 
-**[→ Open the interactive map](https://YOUR-USERNAME.github.io/tourist-friendliness-index/)** <!-- replace after enabling GitHub Pages -->
+**[→ Open the interactive map](https://monanyx.github.io/tourist-friendliness-index/)**
 
 ![Screenshot of the index](docs/screenshot.png)
 
@@ -67,7 +67,7 @@ The full rubric lives in [`data/rubric.json`](data/rubric.json); scoring logic i
 ## Run it yourself
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/tourist-friendliness-index.git
+git clone https://github.com/monanyx/tourist-friendliness-index.git
 cd tourist-friendliness-index
 pip install -r requirements.txt
 
@@ -104,7 +104,7 @@ docs/                  GitHub Pages site (index.html + data/)
 
 1. Push this repository to GitHub.
 2. Go to **Settings → Pages**, set **Source** to *Deploy from a branch*, branch `main`, folder `/docs`.
-3. After a minute the site is live at `https://YOUR-USERNAME.github.io/tourist-friendliness-index/`.
+3. After a minute the site is live at `https://monanyx.github.io/tourist-friendliness-index/`.
 4. Put that link at the top of this README, and set `REPO_URL` near the top of the script in `docs/index.src.html`, then run `python scripts/build_site.py` again.
 
 ## Fairness
