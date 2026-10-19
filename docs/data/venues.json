@@ -1,0 +1,1131 @@
+{
+ "summary": {
+  "venues": 21,
+  "average": 37,
+  "checked": "2026-10-19",
+  "english_menu": 6,
+  "allergens": 6,
+  "no_website": 3,
+  "criteria": [
+   {
+    "id": "site",
+    "label": "Website works",
+    "max": 10,
+    "how": "The venue's own website loads and shows real content (not a placeholder).",
+    "collected": 180,
+    "possible": 210
+   },
+   {
+    "id": "site_lang",
+    "label": "Website languages",
+    "max": 25,
+    "how": "2 languages = 15, 3 or more = 25. Counted from language switchers and hreflang tags.",
+    "collected": 130,
+    "possible": 525
+   },
+   {
+    "id": "menu",
+    "label": "Menu online",
+    "max": 15,
+    "how": "A food menu is reachable from the website (PDF, page, photo or menu app).",
+    "collected": 165,
+    "possible": 315
+   },
+   {
+    "id": "menu_lang",
+    "label": "Menu languages",
+    "max": 25,
+    "how": "Partly translated = 5, German + English = 15, 3 or more languages = 25. Image-only menus and menus behind apps that block reading score 0 here.",
+    "collected": 125,
+    "possible": 525
+   },
+   {
+    "id": "allergens",
+    "label": "Allergen info online",
+    "max": 15,
+    "how": "The online menu carries an EU allergen legend (the 14 allergens, usually letters A–R). A note saying 'ask our staff' does not count.",
+    "collected": 90,
+    "possible": 315
+   },
+   {
+    "id": "booking",
+    "label": "Book or order online",
+    "max": 10,
+    "how": "An online table reservation, request form or webshop. Phone and email only do not count. Hotel-room booking does not count for a café.",
+    "collected": 80,
+    "possible": 210
+   }
+  ]
+ },
+ "rubric": [
+  {
+   "id": "site",
+   "label": "Website works",
+   "max": 10,
+   "how": "The venue's own website loads and shows real content (not a placeholder)."
+  },
+  {
+   "id": "site_lang",
+   "label": "Website languages",
+   "max": 25,
+   "how": "2 languages = 15, 3 or more = 25. Counted from language switchers and hreflang tags."
+  },
+  {
+   "id": "menu",
+   "label": "Menu online",
+   "max": 15,
+   "how": "A food menu is reachable from the website (PDF, page, photo or menu app)."
+  },
+  {
+   "id": "menu_lang",
+   "label": "Menu languages",
+   "max": 25,
+   "how": "Partly translated = 5, German + English = 15, 3 or more languages = 25. Image-only menus and menus behind apps that block reading score 0 here."
+  },
+  {
+   "id": "allergens",
+   "label": "Allergen info online",
+   "max": 15,
+   "how": "The online menu carries an EU allergen legend (the 14 allergens, usually letters A–R). A note saying 'ask our staff' does not count."
+  },
+  {
+   "id": "booking",
+   "label": "Book or order online",
+   "max": 10,
+   "how": "An online table reservation, request form or webshop. Phone and email only do not count. Hotel-room booking does not count for a café."
+  }
+ ],
+ "languages": {
+  "de": "German",
+  "en": "English",
+  "it": "Italian",
+  "fr": "French",
+  "es": "Spanish",
+  "nl": "Dutch"
+ },
+ "venues": [
+  {
+   "venue": "Stiftskeller",
+   "category": "Restaurant",
+   "address": "Stiftgasse 1",
+   "lat": 47.268363,
+   "lon": 11.3948,
+   "website": "https://www.stiftskeller.eu/",
+   "site_status": "live",
+   "site_languages": [
+    "de",
+    "it",
+    "en"
+   ],
+   "menu_status": "yes",
+   "menu_languages": [
+    "de",
+    "it",
+    "en",
+    "fr",
+    "es"
+   ],
+   "menu_translation": "full",
+   "allergens": "yes",
+   "booking": "yes",
+   "booking_detail": "Online request form",
+   "note": "Full menu in five languages with an EU allergen legend. The benchmark for the old town.",
+   "checked": "2026-10-19",
+   "points": {
+    "site": 10,
+    "site_lang": 25,
+    "menu": 15,
+    "menu_lang": 25,
+    "allergens": 15,
+    "booking": 10
+   },
+   "score": 100,
+   "quick_wins": [],
+   "rank": 1
+  },
+  {
+   "venue": "Weisses Rössl",
+   "category": "Restaurant & hotel",
+   "address": "Kiebachgasse 8",
+   "lat": 47.267647,
+   "lon": 11.392337,
+   "website": "https://www.roessl.at/",
+   "site_status": "live",
+   "site_languages": [
+    "de",
+    "en"
+   ],
+   "menu_status": "yes",
+   "menu_languages": [
+    "de",
+    "en"
+   ],
+   "menu_translation": "full",
+   "allergens": "yes",
+   "booking": "yes",
+   "booking_detail": "Online table reservation",
+   "note": "English PDF menu with allergen codes and online table booking.",
+   "checked": "2026-10-19",
+   "points": {
+    "site": 10,
+    "site_lang": 15,
+    "menu": 15,
+    "menu_lang": 15,
+    "allergens": 15,
+    "booking": 10
+   },
+   "score": 80,
+   "quick_wins": [
+    {
+     "criterion": "site_lang",
+     "gain": 10,
+     "text": "Add a third website language, such as Italian or French."
+    },
+    {
+     "criterion": "menu_lang",
+     "gain": 10,
+     "text": "Add a third menu language, such as Italian or French."
+    }
+   ],
+   "rank": 2
+  },
+  {
+   "venue": "Café Central",
+   "category": "Café & hotel",
+   "address": "Gilmstraße 5",
+   "lat": 47.265881,
+   "lon": 11.396533,
+   "website": "https://www.hotel-cafe-central.at/",
+   "site_status": "live",
+   "site_languages": [
+    "de",
+    "en",
+    "it"
+   ],
+   "menu_status": "yes",
+   "menu_languages": [
+    "de"
+   ],
+   "menu_translation": "full",
+   "allergens": "yes",
+   "booking": "no",
+   "booking_detail": "Online booking for hotel rooms only",
+   "note": "Website in three languages, but the café menu PDF is German only.",
+   "checked": "2026-10-19",
+   "points": {
+    "site": 10,
+    "site_lang": 25,
+    "menu": 15,
+    "menu_lang": 0,
+    "allergens": 15,
+    "booking": 0
+   },
+   "score": 65,
+   "quick_wins": [
+    {
+     "criterion": "menu_lang",
+     "gain": 25,
+     "text": "Add English dish names to the menu."
+    },
+    {
+     "criterion": "booking",
+     "gain": 10,
+     "text": "Add a simple online reservation form."
+    }
+   ],
+   "rank": 3
+  },
+  {
+   "venue": "Gasthaus Goldenes Dachl",
+   "category": "Restaurant",
+   "address": "Hofgasse 1",
+   "lat": 47.268645,
+   "lon": 11.393596,
+   "website": "https://www.goldenesdachl.com/",
+   "site_status": "live",
+   "site_languages": [
+    "de"
+   ],
+   "menu_status": "yes",
+   "menu_languages": [
+    "de",
+    "en",
+    "it",
+    "fr"
+   ],
+   "menu_translation": "full",
+   "allergens": "yes",
+   "booking": "no",
+   "booking_detail": "Email or phone",
+   "note": "Excellent four-language menu, but the website around it is German only and booking is by email.",
+   "checked": "2026-10-19",
+   "points": {
+    "site": 10,
+    "site_lang": 0,
+    "menu": 15,
+    "menu_lang": 25,
+    "allergens": 15,
+    "booking": 0
+   },
+   "score": 65,
+   "quick_wins": [
+    {
+     "criterion": "site_lang",
+     "gain": 15,
+     "text": "Add an English version of the website."
+    },
+    {
+     "criterion": "booking",
+     "gain": 10,
+     "text": "Add a simple online reservation form."
+    }
+   ],
+   "rank": 4
+  },
+  {
+   "venue": "Ludwig",
+   "category": "Restaurant",
+   "address": "Museumstraße 3",
+   "lat": 47.267401,
+   "lon": 11.395514,
+   "website": "https://www.ludwig-burger.at/",
+   "site_status": "live",
+   "site_languages": [
+    "de"
+   ],
+   "menu_status": "yes",
+   "menu_languages": [
+    "de",
+    "en"
+   ],
+   "menu_translation": "full",
+   "allergens": "yes",
+   "booking": "yes",
+   "booking_detail": "Online table reservation",
+   "note": "Separate English menu with allergens and online booking. Only the website itself is German.",
+   "checked": "2026-10-19",
+   "points": {
+    "site": 10,
+    "site_lang": 0,
+    "menu": 15,
+    "menu_lang": 15,
+    "allergens": 15,
+    "booking": 10
+   },
+   "score": 65,
+   "quick_wins": [
+    {
+     "criterion": "site_lang",
+     "gain": 15,
+     "text": "Add an English version of the website."
+    },
+    {
+     "criterion": "menu_lang",
+     "gain": 10,
+     "text": "Add a third menu language, such as Italian or French."
+    }
+   ],
+   "rank": 5
+  },
+  {
+   "venue": "Fischerhäusl",
+   "category": "Restaurant",
+   "address": "Herrengasse 8",
+   "lat": 47.269733,
+   "lon": 11.394352,
+   "website": "https://www.fischerhaeusl.com/",
+   "site_status": "live",
+   "site_languages": [
+    "de",
+    "en",
+    "it"
+   ],
+   "menu_status": "image",
+   "menu_languages": [],
+   "menu_translation": "unknown",
+   "allergens": "unknown",
+   "booking": "yes",
+   "booking_detail": "Online request form",
+   "note": "English and Italian site versions exist but are half-translated (menu items still say 'Neue Seite'). The menu is a scanned image PDF.",
+   "checked": "2026-10-19",
+   "points": {
+    "site": 10,
+    "site_lang": 25,
+    "menu": 15,
+    "menu_lang": 0,
+    "allergens": 0,
+    "booking": 10
+   },
+   "score": 60,
+   "quick_wins": [
+    {
+     "criterion": "menu_lang",
+     "gain": 15,
+     "text": "Replace the photo or scanned menu with a text version, so phones can translate it and search engines can read it."
+    },
+    {
+     "criterion": "allergens",
+     "gain": 15,
+     "text": "Print the EU allergen letters (A–R) next to each dish on the online menu."
+    }
+   ],
+   "rank": 6
+  },
+  {
+   "venue": "Goldener Adler",
+   "category": "Restaurant & hotel",
+   "address": "Herzog-Friedrich-Straße 6",
+   "lat": 47.268286,
+   "lon": 11.392476,
+   "website": "https://www.goldeneradler.com/",
+   "site_status": "live",
+   "site_languages": [
+    "de",
+    "en",
+    "it",
+    "fr",
+    "es"
+   ],
+   "menu_status": "app",
+   "menu_languages": [],
+   "menu_translation": "unknown",
+   "allergens": "unknown",
+   "booking": "yes",
+   "booking_detail": "Online table reservation",
+   "note": "Five-language website. The menu lives in an external app that blocks automated reading, so menu points are not scored.",
+   "checked": "2026-10-19",
+   "points": {
+    "site": 10,
+    "site_lang": 25,
+    "menu": 15,
+    "menu_lang": 0,
+    "allergens": 0,
+    "booking": 10
+   },
+   "score": 60,
+   "quick_wins": [
+    {
+     "criterion": "menu_lang",
+     "gain": 15,
+     "text": "Offer the menu as a plain web page or PDF next to the app, so it can be translated and indexed."
+    },
+    {
+     "criterion": "allergens",
+     "gain": 15,
+     "text": "Print the EU allergen letters (A–R) next to each dish on the online menu."
+    }
+   ],
+   "rank": 7
+  },
+  {
+   "venue": "Lichtblick",
+   "category": "Restaurant & café",
+   "address": "Maria-Theresien-Straße 18",
+   "lat": 47.26555,
+   "lon": 11.392729,
+   "website": "https://www.restaurant-lichtblick.at/",
+   "site_status": "live",
+   "site_languages": [
+    "de"
+   ],
+   "menu_status": "yes",
+   "menu_languages": [
+    "de",
+    "en",
+    "it"
+   ],
+   "menu_translation": "full",
+   "allergens": "no",
+   "booking": "yes",
+   "booking_detail": "Online reservation form",
+   "note": "Three-language dinner menu, no allergen codes on it.",
+   "checked": "2026-10-19",
+   "points": {
+    "site": 10,
+    "site_lang": 0,
+    "menu": 15,
+    "menu_lang": 25,
+    "allergens": 0,
+    "booking": 10
+   },
+   "score": 60,
+   "quick_wins": [
+    {
+     "criterion": "site_lang",
+     "gain": 15,
+     "text": "Add an English version of the website."
+    },
+    {
+     "criterion": "allergens",
+     "gain": 15,
+     "text": "Print the EU allergen letters (A–R) next to each dish on the online menu."
+    }
+   ],
+   "rank": 8
+  },
+  {
+   "venue": "Strudel-Café Kröll",
+   "category": "Café",
+   "address": "Hofgasse 6",
+   "lat": 47.268482,
+   "lon": 11.394054,
+   "website": "https://strudel-cafe.at/",
+   "site_status": "live",
+   "site_languages": [
+    "de"
+   ],
+   "menu_status": "yes",
+   "menu_languages": [
+    "de",
+    "en",
+    "it",
+    "fr"
+   ],
+   "menu_translation": "partial",
+   "allergens": "yes",
+   "booking": "no",
+   "booking_detail": "None",
+   "note": "Allergen note in four languages, but most dishes are only named in German.",
+   "checked": "2026-10-19",
+   "points": {
+    "site": 10,
+    "site_lang": 0,
+    "menu": 15,
+    "menu_lang": 5,
+    "allergens": 15,
+    "booking": 0
+   },
+   "score": 45,
+   "quick_wins": [
+    {
+     "criterion": "menu_lang",
+     "gain": 20,
+     "text": "Translate every dish on the menu, not just the notes."
+    },
+    {
+     "criterion": "site_lang",
+     "gain": 15,
+     "text": "Add an English version of the website."
+    },
+    {
+     "criterion": "booking",
+     "gain": 10,
+     "text": "Add a simple online reservation form."
+    }
+   ],
+   "rank": 9
+  },
+  {
+   "venue": "Himal",
+   "category": "Restaurant",
+   "address": "Universitätsstraße 13",
+   "lat": 47.268985,
+   "lon": 11.397896,
+   "website": "https://www.himal.at/",
+   "site_status": "live",
+   "site_languages": [
+    "de"
+   ],
+   "menu_status": "yes",
+   "menu_languages": [
+    "de",
+    "en"
+   ],
+   "menu_translation": "full",
+   "allergens": "no",
+   "booking": "no",
+   "booking_detail": "Phone",
+   "note": "Bilingual German-English takeaway menu; booking by phone.",
+   "checked": "2026-10-19",
+   "points": {
+    "site": 10,
+    "site_lang": 0,
+    "menu": 15,
+    "menu_lang": 15,
+    "allergens": 0,
+    "booking": 0
+   },
+   "score": 40,
+   "quick_wins": [
+    {
+     "criterion": "site_lang",
+     "gain": 15,
+     "text": "Add an English version of the website."
+    },
+    {
+     "criterion": "allergens",
+     "gain": 15,
+     "text": "Print the EU allergen letters (A–R) next to each dish on the online menu."
+    },
+    {
+     "criterion": "menu_lang",
+     "gain": 10,
+     "text": "Add a third menu language, such as Italian or French."
+    },
+    {
+     "criterion": "booking",
+     "gain": 10,
+     "text": "Add a simple online reservation form."
+    }
+   ],
+   "rank": 10
+  },
+  {
+   "venue": "Café Bar Moustache",
+   "category": "Café & bar",
+   "address": "Herzog-Otto-Straße 8",
+   "lat": 47.269206,
+   "lon": 11.392995,
+   "website": "https://www.cafe-moustache.at/",
+   "site_status": "live",
+   "site_languages": [
+    "en"
+   ],
+   "menu_status": "image",
+   "menu_languages": [],
+   "menu_translation": "unknown",
+   "allergens": "unknown",
+   "booking": "yes",
+   "booking_detail": "Online shop",
+   "note": "The only English-only website in the set. The food menu is a set of photos from 2023.",
+   "checked": "2026-10-19",
+   "points": {
+    "site": 10,
+    "site_lang": 0,
+    "menu": 15,
+    "menu_lang": 0,
+    "allergens": 0,
+    "booking": 10
+   },
+   "score": 35,
+   "quick_wins": [
+    {
+     "criterion": "site_lang",
+     "gain": 15,
+     "text": "Add a German version next to the English site."
+    },
+    {
+     "criterion": "menu_lang",
+     "gain": 15,
+     "text": "Replace the photo or scanned menu with a text version, so phones can translate it and search engines can read it."
+    },
+    {
+     "criterion": "allergens",
+     "gain": 15,
+     "text": "Print the EU allergen letters (A–R) next to each dish on the online menu."
+    }
+   ],
+   "rank": 11
+  },
+  {
+   "venue": "Oniriq",
+   "category": "Restaurant",
+   "address": "Bürgerstraße 13",
+   "lat": 47.264704,
+   "lon": 11.390614,
+   "website": "https://www.oniriq.at/",
+   "site_status": "live",
+   "site_languages": [
+    "de",
+    "en"
+   ],
+   "menu_status": "no",
+   "menu_languages": [],
+   "menu_translation": "unknown",
+   "allergens": "no",
+   "booking": "no",
+   "booking_detail": "Phone or email",
+   "note": "Fine-dining tasting menu that is not published online. English site version exists.",
+   "checked": "2026-10-19",
+   "points": {
+    "site": 10,
+    "site_lang": 15,
+    "menu": 0,
+    "menu_lang": 0,
+    "allergens": 0,
+    "booking": 0
+   },
+   "score": 25,
+   "quick_wins": [
+    {
+     "criterion": "menu",
+     "gain": 15,
+     "text": "Put the food menu online as a text PDF or web page."
+    },
+    {
+     "criterion": "allergens",
+     "gain": 15,
+     "text": "Print the EU allergen letters (A–R) next to each dish on the online menu."
+    },
+    {
+     "criterion": "site_lang",
+     "gain": 10,
+     "text": "Add a third website language, such as Italian or French."
+    },
+    {
+     "criterion": "booking",
+     "gain": 10,
+     "text": "Add a simple online reservation form."
+    }
+   ],
+   "rank": 12
+  },
+  {
+   "venue": "Café Katzung",
+   "category": "Café",
+   "address": "Herzog-Friedrich-Straße 16",
+   "lat": 47.268163,
+   "lon": 11.393139,
+   "website": "https://www.cafe-katzung.at/",
+   "site_status": "live",
+   "site_languages": [
+    "de"
+   ],
+   "menu_status": "no",
+   "menu_languages": [],
+   "menu_translation": "unknown",
+   "allergens": "no",
+   "booking": "yes",
+   "booking_detail": "Online shop (click & collect)",
+   "note": "No menu online; has a webshop.",
+   "checked": "2026-10-19",
+   "points": {
+    "site": 10,
+    "site_lang": 0,
+    "menu": 0,
+    "menu_lang": 0,
+    "allergens": 0,
+    "booking": 10
+   },
+   "score": 20,
+   "quick_wins": [
+    {
+     "criterion": "site_lang",
+     "gain": 15,
+     "text": "Add an English version of the website."
+    },
+    {
+     "criterion": "menu",
+     "gain": 15,
+     "text": "Put the food menu online as a text PDF or web page."
+    },
+    {
+     "criterion": "allergens",
+     "gain": 15,
+     "text": "Print the EU allergen letters (A–R) next to each dish on the online menu."
+    }
+   ],
+   "rank": 13
+  },
+  {
+   "venue": "360 Grad",
+   "category": "Café & bar",
+   "address": "Maria-Theresien-Straße 18",
+   "lat": 47.265485,
+   "lon": 11.392412,
+   "website": "https://www.360-grad.at/",
+   "site_status": "live",
+   "site_languages": [
+    "de"
+   ],
+   "menu_status": "no",
+   "menu_languages": [],
+   "menu_translation": "unknown",
+   "allergens": "no",
+   "booking": "no",
+   "booking_detail": "Phone",
+   "note": "No food menu online; the wine and drinks menu links fail.",
+   "checked": "2026-10-19",
+   "points": {
+    "site": 10,
+    "site_lang": 0,
+    "menu": 0,
+    "menu_lang": 0,
+    "allergens": 0,
+    "booking": 0
+   },
+   "score": 10,
+   "quick_wins": [
+    {
+     "criterion": "site_lang",
+     "gain": 15,
+     "text": "Add an English version of the website."
+    },
+    {
+     "criterion": "menu",
+     "gain": 15,
+     "text": "Put the food menu online as a text PDF or web page."
+    },
+    {
+     "criterion": "allergens",
+     "gain": 15,
+     "text": "Print the EU allergen letters (A–R) next to each dish on the online menu."
+    },
+    {
+     "criterion": "booking",
+     "gain": 10,
+     "text": "Add a simple online reservation form."
+    }
+   ],
+   "rank": 14
+  },
+  {
+   "venue": "Café Munding",
+   "category": "Café",
+   "address": "Kiebachgasse 16",
+   "lat": 47.267205,
+   "lon": 11.392632,
+   "website": "https://www.munding.at/",
+   "site_status": "live",
+   "site_languages": [
+    "de"
+   ],
+   "menu_status": "no",
+   "menu_languages": [],
+   "menu_translation": "unknown",
+   "allergens": "no",
+   "booking": "no",
+   "booking_detail": "None",
+   "note": "One-page German site, no menu.",
+   "checked": "2026-10-19",
+   "points": {
+    "site": 10,
+    "site_lang": 0,
+    "menu": 0,
+    "menu_lang": 0,
+    "allergens": 0,
+    "booking": 0
+   },
+   "score": 10,
+   "quick_wins": [
+    {
+     "criterion": "site_lang",
+     "gain": 15,
+     "text": "Add an English version of the website."
+    },
+    {
+     "criterion": "menu",
+     "gain": 15,
+     "text": "Put the food menu online as a text PDF or web page."
+    },
+    {
+     "criterion": "allergens",
+     "gain": 15,
+     "text": "Print the EU allergen letters (A–R) next to each dish on the online menu."
+    },
+    {
+     "criterion": "booking",
+     "gain": 10,
+     "text": "Add a simple online reservation form."
+    }
+   ],
+   "rank": 15
+  },
+  {
+   "venue": "Café Valier",
+   "category": "Café",
+   "address": "Maximilianstraße 27",
+   "lat": 47.262194,
+   "lon": 11.390462,
+   "website": "https://www.konditorei-innsbruck.at/",
+   "site_status": "live",
+   "site_languages": [
+    "de"
+   ],
+   "menu_status": "no",
+   "menu_languages": [],
+   "menu_translation": "unknown",
+   "allergens": "no",
+   "booking": "no",
+   "booking_detail": "Phone or in person",
+   "note": "German only; orders by phone or in person.",
+   "checked": "2026-10-19",
+   "points": {
+    "site": 10,
+    "site_lang": 0,
+    "menu": 0,
+    "menu_lang": 0,
+    "allergens": 0,
+    "booking": 0
+   },
+   "score": 10,
+   "quick_wins": [
+    {
+     "criterion": "site_lang",
+     "gain": 15,
+     "text": "Add an English version of the website."
+    },
+    {
+     "criterion": "menu",
+     "gain": 15,
+     "text": "Put the food menu online as a text PDF or web page."
+    },
+    {
+     "criterion": "allergens",
+     "gain": 15,
+     "text": "Print the EU allergen letters (A–R) next to each dish on the online menu."
+    },
+    {
+     "criterion": "booking",
+     "gain": 10,
+     "text": "Add a simple online reservation form."
+    }
+   ],
+   "rank": 16
+  },
+  {
+   "venue": "Die Wilderin",
+   "category": "Restaurant",
+   "address": "Seilergasse 5",
+   "lat": 47.267899,
+   "lon": 11.392765,
+   "website": "https://www.diewilderin.at/",
+   "site_status": "live",
+   "site_languages": [
+    "de"
+   ],
+   "menu_status": "no",
+   "menu_languages": [],
+   "menu_translation": "unknown",
+   "allergens": "no",
+   "booking": "no",
+   "booking_detail": "Phone",
+   "note": "Food section is a blog, not a menu; reservations by phone.",
+   "checked": "2026-10-19",
+   "points": {
+    "site": 10,
+    "site_lang": 0,
+    "menu": 0,
+    "menu_lang": 0,
+    "allergens": 0,
+    "booking": 0
+   },
+   "score": 10,
+   "quick_wins": [
+    {
+     "criterion": "site_lang",
+     "gain": 15,
+     "text": "Add an English version of the website."
+    },
+    {
+     "criterion": "menu",
+     "gain": 15,
+     "text": "Put the food menu online as a text PDF or web page."
+    },
+    {
+     "criterion": "allergens",
+     "gain": 15,
+     "text": "Print the EU allergen letters (A–R) next to each dish on the online menu."
+    },
+    {
+     "criterion": "booking",
+     "gain": 10,
+     "text": "Add a simple online reservation form."
+    }
+   ],
+   "rank": 17
+  },
+  {
+   "venue": "Löwenhaus",
+   "category": "Restaurant",
+   "address": "Rennweg 5",
+   "lat": 47.275636,
+   "lon": 11.398301,
+   "website": "https://www.loewenhaus.at/",
+   "site_status": "live",
+   "site_languages": [
+    "de"
+   ],
+   "menu_status": "broken",
+   "menu_languages": [],
+   "menu_translation": "unknown",
+   "allergens": "no",
+   "booking": "no",
+   "booking_detail": "None",
+   "note": "Main menu link is broken (a 2019 file). Homepage carries an unrelated online-casino promotion.",
+   "checked": "2026-10-19",
+   "points": {
+    "site": 10,
+    "site_lang": 0,
+    "menu": 0,
+    "menu_lang": 0,
+    "allergens": 0,
+    "booking": 0
+   },
+   "score": 10,
+   "quick_wins": [
+    {
+     "criterion": "site_lang",
+     "gain": 15,
+     "text": "Add an English version of the website."
+    },
+    {
+     "criterion": "menu",
+     "gain": 15,
+     "text": "Fix the broken menu link."
+    },
+    {
+     "criterion": "allergens",
+     "gain": 15,
+     "text": "Print the EU allergen letters (A–R) next to each dish on the online menu."
+    },
+    {
+     "criterion": "booking",
+     "gain": 10,
+     "text": "Add a simple online reservation form."
+    }
+   ],
+   "rank": 18
+  },
+  {
+   "venue": "Cammerlander",
+   "category": "Restaurant & bar",
+   "address": "Innrain 2",
+   "lat": 47.26793,
+   "lon": 11.390982,
+   "website": "http://www.cammerlander.at/",
+   "site_status": "dead",
+   "site_languages": [],
+   "menu_status": "no",
+   "menu_languages": [],
+   "menu_translation": "unknown",
+   "allergens": "no",
+   "booking": "no",
+   "booking_detail": "None",
+   "note": "Domain shows a hosting placeholder page.",
+   "checked": "2026-10-19",
+   "points": {
+    "site": 0,
+    "site_lang": 0,
+    "menu": 0,
+    "menu_lang": 0,
+    "allergens": 0,
+    "booking": 0
+   },
+   "score": 0,
+   "quick_wins": [
+    {
+     "criterion": "menu",
+     "gain": 15,
+     "text": "Put the food menu online as a text PDF or web page."
+    },
+    {
+     "criterion": "allergens",
+     "gain": 15,
+     "text": "Print the EU allergen letters (A–R) next to each dish on the online menu."
+    },
+    {
+     "criterion": "site",
+     "gain": 10,
+     "text": "Get a working website online, even one page with hours, menu and a map."
+    },
+    {
+     "criterion": "booking",
+     "gain": 10,
+     "text": "Add a simple online reservation form."
+    }
+   ],
+   "rank": 19
+  },
+  {
+   "venue": "Gasthaus Anich",
+   "category": "Restaurant",
+   "address": "Anichstraße 15",
+   "lat": 47.264537,
+   "lon": 11.391762,
+   "website": "",
+   "site_status": "none",
+   "site_languages": [],
+   "menu_status": "no",
+   "menu_languages": [],
+   "menu_translation": "unknown",
+   "allergens": "no",
+   "booking": "no",
+   "booking_detail": "None",
+   "note": "No own website found.",
+   "checked": "2026-10-19",
+   "points": {
+    "site": 0,
+    "site_lang": 0,
+    "menu": 0,
+    "menu_lang": 0,
+    "allergens": 0,
+    "booking": 0
+   },
+   "score": 0,
+   "quick_wins": [
+    {
+     "criterion": "menu",
+     "gain": 15,
+     "text": "Put the food menu online as a text PDF or web page."
+    },
+    {
+     "criterion": "allergens",
+     "gain": 15,
+     "text": "Print the EU allergen letters (A–R) next to each dish on the online menu."
+    },
+    {
+     "criterion": "site",
+     "gain": 10,
+     "text": "Get a working website online, even one page with hours, menu and a map."
+    },
+    {
+     "criterion": "booking",
+     "gain": 10,
+     "text": "Add a simple online reservation form."
+    }
+   ],
+   "rank": 20
+  },
+  {
+   "venue": "Ottoburg",
+   "category": "Restaurant",
+   "address": "Herzog-Friedrich-Straße 1",
+   "lat": 47.268484,
+   "lon": 11.392007,
+   "website": "https://www.ottoburg.at/",
+   "site_status": "placeholder",
+   "site_languages": [],
+   "menu_status": "no",
+   "menu_languages": [],
+   "menu_translation": "unknown",
+   "allergens": "no",
+   "booking": "no",
+   "booking_detail": "Email or phone",
+   "note": "Website shows only an 'under construction' notice.",
+   "checked": "2026-10-19",
+   "points": {
+    "site": 0,
+    "site_lang": 0,
+    "menu": 0,
+    "menu_lang": 0,
+    "allergens": 0,
+    "booking": 0
+   },
+   "score": 0,
+   "quick_wins": [
+    {
+     "criterion": "menu",
+     "gain": 15,
+     "text": "Put the food menu online as a text PDF or web page."
+    },
+    {
+     "criterion": "allergens",
+     "gain": 15,
+     "text": "Print the EU allergen letters (A–R) next to each dish on the online menu."
+    },
+    {
+     "criterion": "site",
+     "gain": 10,
+     "text": "Get a working website online, even one page with hours, menu and a map."
+    },
+    {
+     "criterion": "booking",
+     "gain": 10,
+     "text": "Add a simple online reservation form."
+    }
+   ],
+   "rank": 21
+  }
+ ]
+}

@@ -1,0 +1,851 @@
+[
+  {
+    "venue": "Stiftskeller",
+    "website": "https://www.stiftskeller.eu/",
+    "checked": "2026-10-19T17:51:46+00:00",
+    "http": 200,
+    "final_url": "https://www.stiftskeller.eu/",
+    "title": "Restaurant Bierlokal in Innsbruck - Altstadt - Stiftskeller: Stiftskeller Innsbruck",
+    "chars": 3485,
+    "site_status": "live",
+    "site_languages": [
+      "de",
+      "en",
+      "it"
+    ],
+    "booking_signals": [
+      "bestell",
+      "order"
+    ],
+    "allergens_on_site": false,
+    "off_topic_signals": [],
+    "menus": [
+      {
+        "url": "https://www.stiftskeller.eu/fileadmin/user_upload/dokumente/Speisekarte_Herbst_Winter_2026.pdf",
+        "http": 200,
+        "bytes": 8390458,
+        "kind": "pdf",
+        "pages": 12,
+        "status": "ok",
+        "chars": 38916,
+        "languages": {
+          "de": 142,
+          "en": 145,
+          "it": 59,
+          "fr": 129,
+          "es": 72
+        },
+        "allergens": true
+      },
+      {
+        "url": "https://www.stiftskeller.eu/fileadmin/user_upload/dokumente/stiftskeller-innsbruck-wochenkarte.pdf",
+        "http": 200,
+        "bytes": 453765,
+        "kind": "pdf",
+        "pages": 1,
+        "status": "ok",
+        "chars": 2791,
+        "languages": {
+          "de": 33
+        },
+        "allergens": false
+      }
+    ]
+  },
+  {
+    "venue": "Weisses Rössl",
+    "website": "https://www.roessl.at/",
+    "checked": "2026-10-19T17:52:02+00:00",
+    "http": 200,
+    "final_url": "https://www.roessl.at/",
+    "title": "Innsbruck Boutiquehotel Weisses Rössl im Altstadt Zentrum",
+    "chars": 2939,
+    "site_status": "live",
+    "site_languages": [
+      "de",
+      "en"
+    ],
+    "booking_signals": [
+      "order",
+      "reserv",
+      "tisch"
+    ],
+    "allergens_on_site": false,
+    "off_topic_signals": [],
+    "menus": []
+  },
+  {
+    "venue": "Gasthaus Goldenes Dachl",
+    "website": "https://www.goldenesdachl.com/",
+    "checked": "2026-10-19T17:52:04+00:00",
+    "http": 200,
+    "final_url": "https://www.goldenesdachl.com/",
+    "title": "Gasthaus Goldenes Dachl | Einkehren und genieÃen",
+    "chars": 1584,
+    "site_status": "live",
+    "site_languages": [
+      "de"
+    ],
+    "booking_signals": [
+      "reserv"
+    ],
+    "allergens_on_site": false,
+    "off_topic_signals": [],
+    "menus": [
+      {
+        "url": "https://www.goldenesdachl.com/GD_Speisekarte.pdf",
+        "http": 200,
+        "bytes": 1746944,
+        "kind": "pdf",
+        "pages": 13,
+        "status": "ok",
+        "chars": 12473,
+        "languages": {
+          "de": 127
+        },
+        "allergens": true
+      },
+      {
+        "url": "https://www.goldenesdachl.com/GD_Menu.pdf",
+        "http": 200,
+        "bytes": 1759702,
+        "kind": "pdf",
+        "pages": 15,
+        "status": "ok",
+        "chars": 22585,
+        "languages": {
+          "de": 90,
+          "en": 135,
+          "it": 57,
+          "fr": 109
+        },
+        "allergens": true
+      }
+    ]
+  },
+  {
+    "venue": "Goldener Adler",
+    "website": "https://www.goldeneradler.com/",
+    "checked": "2026-10-19T17:52:10+00:00",
+    "http": 200,
+    "final_url": "https://www.goldeneradler.com/",
+    "title": "Restaurant Goldener Adler Innsbruck Altstadt",
+    "chars": 21800,
+    "site_status": "live",
+    "site_languages": [
+      "de",
+      "en",
+      "es",
+      "fr",
+      "it"
+    ],
+    "booking_signals": [
+      "bestell",
+      "order",
+      "reserv",
+      "shop",
+      "table",
+      "tisch"
+    ],
+    "allergens_on_site": false,
+    "off_topic_signals": [],
+    "menus": [
+      {
+        "url": "https://www.goldeneradler.com/aktuelles/martini-gansl-essen/",
+        "http": 200,
+        "bytes": 1005094,
+        "kind": "html",
+        "status": "ok",
+        "chars": 2300,
+        "languages": {
+          "de": 16
+        },
+        "allergens": false
+      },
+      {
+        "url": "https://www.goldeneradler.com/wp-content/uploads/restaurant-goldener-adler-innsbruck-nachmittagskarte.pdf",
+        "http": 404,
+        "bytes": 110118,
+        "status": "broken"
+      }
+    ]
+  },
+  {
+    "venue": "Lichtblick",
+    "website": "https://www.restaurant-lichtblick.at/",
+    "checked": "2026-10-19T17:52:20+00:00",
+    "http": 200,
+    "final_url": "https://www.restaurant-lichtblick.at/",
+    "title": "Lichtblick – Cafe Restaurant Terrasse",
+    "chars": 2110,
+    "site_status": "live",
+    "site_languages": [
+      "de"
+    ],
+    "booking_signals": [
+      "reserv"
+    ],
+    "allergens_on_site": false,
+    "off_topic_signals": [],
+    "menus": [
+      {
+        "url": "http://www.restaurant-lichtblick.at/",
+        "http": 200,
+        "bytes": 109050,
+        "kind": "html",
+        "status": "ok",
+        "chars": 2110,
+        "languages": {
+          "de": 10
+        },
+        "allergens": false
+      },
+      {
+        "url": "https://www.restaurant-lichtblick.at/tageskarte",
+        "http": 200,
+        "bytes": 95532,
+        "kind": "pdf",
+        "pages": 1,
+        "status": "ok",
+        "chars": 1208,
+        "languages": {
+          "de": 12
+        },
+        "allergens": false
+      },
+      {
+        "url": "https://www.restaurant-lichtblick.at/abendkarte",
+        "http": 200,
+        "bytes": 106757,
+        "kind": "pdf",
+        "pages": 3,
+        "status": "ok",
+        "chars": 4675,
+        "languages": {
+          "de": 14,
+          "en": 14,
+          "it": 11
+        },
+        "allergens": false
+      },
+      {
+        "url": "https://www.restaurant-lichtblick.at/weinkarte",
+        "http": 200,
+        "bytes": 240155,
+        "kind": "pdf",
+        "pages": 9,
+        "status": "ok",
+        "chars": 13111,
+        "languages": {},
+        "allergens": false
+      },
+      {
+        "url": "https://www.restaurant-lichtblick.at/getraenkekarte",
+        "http": 404,
+        "bytes": 60439,
+        "status": "broken"
+      }
+    ]
+  },
+  {
+    "venue": "Strudel-Café Kröll",
+    "website": "https://strudel-cafe.at/",
+    "checked": "2026-10-19T17:52:33+00:00",
+    "http": 200,
+    "final_url": "https://strudel-cafe.at/",
+    "title": "Strudel-Café Kröll in der Altstadt von Innsbruck",
+    "chars": 5404,
+    "site_status": "live",
+    "site_languages": [
+      "de"
+    ],
+    "booking_signals": [],
+    "allergens_on_site": false,
+    "off_topic_signals": [],
+    "menus": [
+      {
+        "url": "https://strudel-cafe.at/wp-content/uploads/2025/07/Strudelcafe_Fruehstueckskarte_2025.pdf",
+        "http": 200,
+        "bytes": 1416902,
+        "kind": "pdf",
+        "pages": 2,
+        "status": "ok",
+        "chars": 5007,
+        "languages": {
+          "de": 63
+        },
+        "allergens": false
+      },
+      {
+        "url": "https://strudel-cafe.at/wp-content/uploads/2025/07/Strudelcafe_Sommerkarte_2025.pdf",
+        "http": 200,
+        "bytes": 1243508,
+        "kind": "pdf",
+        "pages": 2,
+        "status": "ok",
+        "chars": 2079,
+        "languages": {
+          "de": 11
+        },
+        "allergens": false
+      }
+    ]
+  },
+  {
+    "venue": "Fischerhäusl",
+    "website": "https://www.fischerhaeusl.com/",
+    "checked": "2026-10-19T17:52:39+00:00",
+    "http": 200,
+    "final_url": "https://www.fischerhaeusl.com/",
+    "title": "Fischerhäusl Innsbruck | best local food | Innsbruck, Österreich",
+    "chars": 511,
+    "site_status": "live",
+    "site_languages": [
+      "de",
+      "en",
+      "it"
+    ],
+    "booking_signals": [
+      "reserv"
+    ],
+    "allergens_on_site": false,
+    "off_topic_signals": [],
+    "menus": [
+      {
+        "url": "https://www.fischerhaeusl.com/menus-1",
+        "http": 200,
+        "bytes": 1202891,
+        "kind": "html",
+        "status": "ok",
+        "chars": 717,
+        "languages": {
+          "de": 5
+        },
+        "allergens": false
+      },
+      {
+        "url": "https://www.fischerhaeusl.com/gift-card",
+        "http": 200,
+        "bytes": 1370053,
+        "kind": "html",
+        "status": "ok",
+        "chars": 600,
+        "languages": {},
+        "allergens": false
+      }
+    ]
+  },
+  {
+    "venue": "Café Katzung",
+    "website": "https://www.cafe-katzung.at/",
+    "checked": "2026-10-19T17:52:44+00:00",
+    "http": 200,
+    "final_url": "https://www.cafe-katzung.at/",
+    "title": "Café & Konditorei Katzung | Altstadt Innsbruck | Cafe & Konditorei Katzung",
+    "chars": 1648,
+    "site_status": "live",
+    "site_languages": [
+      "de"
+    ],
+    "booking_signals": [
+      "bestell",
+      "click & collect",
+      "shop"
+    ],
+    "allergens_on_site": false,
+    "off_topic_signals": [],
+    "menus": []
+  },
+  {
+    "venue": "Löwenhaus",
+    "website": "https://www.loewenhaus.at/",
+    "checked": "2026-10-19T17:52:46+00:00",
+    "http": 200,
+    "final_url": "https://www.loewenhaus.at/",
+    "title": "Restaurant Innsbruck - Löwenhaus - Startseite",
+    "chars": 2737,
+    "site_status": "live",
+    "site_languages": [
+      "de"
+    ],
+    "booking_signals": [
+      "tisch"
+    ],
+    "allergens_on_site": false,
+    "off_topic_signals": [
+      "casino"
+    ],
+    "menus": [
+      {
+        "url": "https://www.loewenhaus.at/restaurant/",
+        "http": 200,
+        "bytes": 14439,
+        "kind": "html",
+        "status": "ok",
+        "chars": 2658,
+        "languages": {
+          "de": 16
+        },
+        "allergens": false
+      },
+      {
+        "url": "https://www.loewenhaus.at/restaurant",
+        "http": 200,
+        "bytes": 14439,
+        "kind": "html",
+        "status": "ok",
+        "chars": 2658,
+        "languages": {
+          "de": 16
+        },
+        "allergens": false
+      },
+      {
+        "url": "https://www.loewenhaus.at/wp-content/uploads/Mittagsmenue.pdf",
+        "http": 200,
+        "bytes": 112076,
+        "kind": "pdf",
+        "pages": 1,
+        "status": "ok",
+        "chars": 994,
+        "languages": {
+          "de": 17
+        },
+        "allergens": false
+      },
+      {
+        "url": "https://www.loewenhaus.at/wp-content/uploads/Sommergartenkarte2019.pdf",
+        "http": 404,
+        "bytes": 189,
+        "status": "broken"
+      },
+      {
+        "url": "https://www.loewenhaus.at/wp-content/uploads/Kinderkarte_A4_2019.pdf",
+        "http": 404,
+        "bytes": 189,
+        "status": "broken"
+      }
+    ]
+  },
+  {
+    "venue": "Café Munding",
+    "website": "https://www.munding.at/",
+    "checked": "2026-10-19T17:52:51+00:00",
+    "http": 200,
+    "final_url": "https://www.munding.at/",
+    "title": "Munding - Konditorei-Cafe seit 1803 - Home",
+    "chars": 1749,
+    "site_status": "live",
+    "site_languages": [
+      "de"
+    ],
+    "booking_signals": [
+      "order"
+    ],
+    "allergens_on_site": false,
+    "off_topic_signals": [],
+    "menus": []
+  },
+  {
+    "venue": "Café Valier",
+    "website": "https://www.konditorei-innsbruck.at/",
+    "checked": "2026-10-19T17:52:53+00:00",
+    "http": 200,
+    "final_url": "https://www.konditorei-innsbruck.at/",
+    "title": "Cafe-Konditorei Valier - Konditorei mit Genuss in Innsbruck",
+    "chars": 3480,
+    "site_status": "live",
+    "site_languages": [
+      "de"
+    ],
+    "booking_signals": [
+      "bestell"
+    ],
+    "allergens_on_site": false,
+    "off_topic_signals": [],
+    "menus": []
+  },
+  {
+    "venue": "Ottoburg",
+    "website": "https://www.ottoburg.at/",
+    "checked": "2026-10-19T17:52:55+00:00",
+    "http": 200,
+    "final_url": "https://www.ottoburg.at/under-construction.html",
+    "title": "Ottoburg Innsbruck",
+    "chars": 260,
+    "site_status": "placeholder",
+    "site_languages": [
+      "de"
+    ],
+    "booking_signals": [
+      "reserv"
+    ],
+    "allergens_on_site": false,
+    "off_topic_signals": [],
+    "menus": []
+  },
+  {
+    "venue": "Cammerlander",
+    "website": "http://www.cammerlander.at/",
+    "checked": "2026-10-19T17:52:57+00:00",
+    "http": 200,
+    "final_url": "http://www.cammerlander.at/",
+    "title": "Webspace nicht gefunden!",
+    "chars": 73,
+    "site_status": "placeholder",
+    "site_languages": [],
+    "booking_signals": [],
+    "allergens_on_site": false,
+    "off_topic_signals": [],
+    "menus": []
+  },
+  {
+    "venue": "Gasthaus Anich",
+    "website": "",
+    "checked": "2026-10-19T17:52:59+00:00",
+    "site_status": "none"
+  },
+  {
+    "venue": "Die Wilderin",
+    "website": "https://www.diewilderin.at/",
+    "checked": "2026-10-19T17:52:59+00:00",
+    "http": 200,
+    "final_url": "https://www.diewilderin.at/",
+    "title": "Unser Zugang zur alpinen Kulinarik",
+    "chars": 5118,
+    "site_status": "live",
+    "site_languages": [
+      "de"
+    ],
+    "booking_signals": [
+      "order",
+      "reserv",
+      "tisch"
+    ],
+    "allergens_on_site": false,
+    "off_topic_signals": [],
+    "menus": [
+      {
+        "url": "https://www.diewilderin.at/essen/",
+        "http": 200,
+        "bytes": 49929,
+        "kind": "html",
+        "status": "ok",
+        "chars": 2408,
+        "languages": {
+          "de": 8
+        },
+        "allergens": false
+      }
+    ]
+  },
+  {
+    "venue": "Café Central",
+    "website": "https://www.hotel-cafe-central.at/",
+    "checked": "2026-10-19T17:53:03+00:00",
+    "http": 200,
+    "final_url": "https://www.hotel-cafe-central.at/",
+    "title": "HOME - Hotel Café Central Innsbruck",
+    "chars": 7085,
+    "site_status": "live",
+    "site_languages": [
+      "de",
+      "en",
+      "it"
+    ],
+    "booking_signals": [
+      "shop",
+      "tisch"
+    ],
+    "allergens_on_site": false,
+    "off_topic_signals": [],
+    "menus": [
+      {
+        "url": "https://www.hotel-cafe-central.at/cafe-central/",
+        "http": 200,
+        "bytes": 157452,
+        "kind": "html",
+        "status": "ok",
+        "chars": 10359,
+        "languages": {
+          "de": 86
+        },
+        "allergens": false
+      },
+      {
+        "url": "https://www.hotel-cafe-central.at/central-tageskarte/",
+        "http": 200,
+        "bytes": 92022,
+        "kind": "html",
+        "status": "ok",
+        "chars": 1906,
+        "languages": {
+          "de": 16
+        },
+        "allergens": false
+      },
+      {
+        "url": "https://www.hotel-cafe-central.at/central-speisekarte/",
+        "http": 200,
+        "bytes": 92022,
+        "kind": "html",
+        "status": "ok",
+        "chars": 1906,
+        "languages": {
+          "de": 16
+        },
+        "allergens": false
+      }
+    ]
+  },
+  {
+    "venue": "Himal",
+    "website": "https://www.himal.at/",
+    "checked": "2026-10-19T17:53:12+00:00",
+    "http": 200,
+    "final_url": "https://himal.at/",
+    "title": "HIMAL – Nepali Restaurant Innsbruck",
+    "chars": 7860,
+    "site_status": "live",
+    "site_languages": [
+      "de"
+    ],
+    "booking_signals": [
+      "reserv",
+      "table"
+    ],
+    "allergens_on_site": false,
+    "off_topic_signals": [],
+    "menus": []
+  },
+  {
+    "venue": "Ludwig",
+    "website": "https://www.ludwig-burger.at/",
+    "checked": "2026-10-19T17:53:15+00:00",
+    "http": 200,
+    "final_url": "https://www.ludwig-burger.at/",
+    "title": "Ludwig - Das Burger Restaurant | Innsbruck | Salzburg | Wien",
+    "chars": 13341,
+    "site_status": "live",
+    "site_languages": [
+      "de",
+      "en"
+    ],
+    "booking_signals": [
+      "bestell",
+      "order",
+      "reserv",
+      "tisch"
+    ],
+    "allergens_on_site": false,
+    "off_topic_signals": [],
+    "menus": [
+      {
+        "url": "https://www.ludwig-burger.at/speisekarte",
+        "http": 200,
+        "bytes": 1569134,
+        "kind": "pdf",
+        "pages": 6,
+        "status": "ok",
+        "chars": 17066,
+        "languages": {
+          "de": 40,
+          "en": 68,
+          "fr": 7
+        },
+        "allergens": false
+      },
+      {
+        "url": "https://www.ludwig-burger.at/speisekarte/de",
+        "http": 200,
+        "bytes": 233768,
+        "kind": "pdf",
+        "pages": 3,
+        "status": "ok",
+        "chars": 8475,
+        "languages": {
+          "de": 39,
+          "en": 7,
+          "fr": 6
+        },
+        "allergens": false
+      },
+      {
+        "url": "https://www.ludwig-burger.at/speisekarte/en",
+        "http": 200,
+        "bytes": 1255907,
+        "kind": "pdf",
+        "pages": 3,
+        "status": "ok",
+        "chars": 8590,
+        "languages": {
+          "en": 61
+        },
+        "allergens": false
+      }
+    ]
+  },
+  {
+    "venue": "Café Bar Moustache",
+    "website": "https://www.cafe-moustache.at/",
+    "checked": "2026-10-19T17:53:23+00:00",
+    "http": 200,
+    "final_url": "https://www.cafe-moustache.at/",
+    "title": "Cafe - Bar Moustache",
+    "chars": 1929,
+    "site_status": "live",
+    "site_languages": [
+      "en"
+    ],
+    "booking_signals": [
+      "shop"
+    ],
+    "allergens_on_site": false,
+    "off_topic_signals": [],
+    "menus": [
+      {
+        "url": "https://www.cafe-moustache.at/moustache2023/wp-content/uploads/2023/11/moustache_summer_food_23_markus_fanninger-2.jpg",
+        "http": 200,
+        "bytes": 424550,
+        "kind": "image",
+        "status": "image-only"
+      },
+      {
+        "url": "https://www.cafe-moustache.at/moustache2023/wp-content/uploads/2023/11/moustache_summer_food_23_markus_fanninger-4.jpg",
+        "http": 200,
+        "bytes": 344849,
+        "kind": "image",
+        "status": "image-only"
+      },
+      {
+        "url": "https://www.cafe-moustache.at/moustache2023/wp-content/uploads/2023/11/moustache_summer_food_23_markus_fanninger-6.jpg",
+        "http": 200,
+        "bytes": 658002,
+        "kind": "image",
+        "status": "image-only"
+      },
+      {
+        "url": "https://www.cafe-moustache.at/moustache2023/wp-content/uploads/2023/11/moustache_summer_food_23_markus_fanninger-7.jpg",
+        "http": 200,
+        "bytes": 393704,
+        "kind": "image",
+        "status": "image-only"
+      },
+      {
+        "url": "https://www.cafe-moustache.at/moustache2023/wp-content/uploads/2023/11/moustache_summer_food_23_markus_fanninger-9.jpg",
+        "http": 200,
+        "bytes": 348027,
+        "kind": "image",
+        "status": "image-only"
+      },
+      {
+        "url": "https://www.cafe-moustache.at/moustache2023/wp-content/uploads/2023/11/moustache_summer_food_23_markus_fanninger-11.jpg",
+        "http": 200,
+        "bytes": 434015,
+        "kind": "image",
+        "status": "image-only"
+      }
+    ]
+  },
+  {
+    "venue": "Oniriq",
+    "website": "https://www.oniriq.at/",
+    "checked": "2026-10-19T17:53:34+00:00",
+    "http": 200,
+    "final_url": "https://www.oniriq.at/",
+    "title": "ONIRIQ Gourmetrestaurant | 4 HAUBENRESTAURANT | INNSBRUCK",
+    "chars": 1736,
+    "site_status": "live",
+    "site_languages": [
+      "de",
+      "en"
+    ],
+    "booking_signals": [
+      "reserv"
+    ],
+    "allergens_on_site": false,
+    "off_topic_signals": [],
+    "menus": [
+      {
+        "url": "https://www.oniriq.at/menü",
+        "http": 200,
+        "bytes": 591876,
+        "kind": "html",
+        "status": "ok",
+        "chars": 806,
+        "languages": {},
+        "allergens": false
+      }
+    ]
+  },
+  {
+    "venue": "360 Grad",
+    "website": "https://www.360-grad.at/",
+    "checked": "2026-10-19T17:53:36+00:00",
+    "http": 200,
+    "final_url": "https://www.360-grad.at/",
+    "title": "360 Grad – Cafe Weinbar Lounge",
+    "chars": 1908,
+    "site_status": "live",
+    "site_languages": [
+      "de"
+    ],
+    "booking_signals": [
+      "reserv"
+    ],
+    "allergens_on_site": false,
+    "off_topic_signals": [],
+    "menus": [
+      {
+        "url": "https://www.360-grad.at/karten/weine",
+        "http": 404,
+        "bytes": 46637,
+        "status": "broken"
+      },
+      {
+        "url": "https://www.360-grad.at/karten/getraenke",
+        "http": 404,
+        "bytes": 46637,
+        "status": "broken"
+      }
+    ]
+  },
+  {
+    "venue": "Weinhaus Happ",
+    "website": "https://www.weinhaus-happ.at/",
+    "checked": "2026-10-19T17:53:41+00:00",
+    "http": 200,
+    "final_url": "https://weinonaut.at/weinhaus-happ-innsbruck/",
+    "title": "Weinhaus Happ Innsbruck: Geschichte & heutiger Status",
+    "chars": 18763,
+    "site_status": "live",
+    "site_languages": [
+      "de",
+      "es",
+      "fr"
+    ],
+    "booking_signals": [
+      "reserv"
+    ],
+    "allergens_on_site": false,
+    "off_topic_signals": [],
+    "menus": []
+  },
+  {
+    "venue": "Due Sicilie",
+    "website": "https://www.duesicilie.at/",
+    "checked": "2026-10-19T17:53:45+00:00",
+    "http": 403,
+    "final_url": "http://innspizzerie.at/",
+    "title": "Attention Required! | Cloudflare",
+    "chars": 758,
+    "site_status": "error",
+    "site_languages": [
+      "en"
+    ],
+    "booking_signals": [],
+    "allergens_on_site": false,
+    "off_topic_signals": [],
+    "menus": []
+  }
+]

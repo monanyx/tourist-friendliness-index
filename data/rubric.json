@@ -1,0 +1,14 @@
+[
+  {"id": "site", "label": "Website works", "max": 10,
+   "how": "The venue's own website loads and shows real content (not a placeholder)."},
+  {"id": "site_lang", "label": "Website languages", "max": 25,
+   "how": "2 languages = 15, 3 or more = 25. Counted from language switchers and hreflang tags."},
+  {"id": "menu", "label": "Menu online", "max": 15,
+   "how": "A food menu is reachable from the website (PDF, page, photo or menu app)."},
+  {"id": "menu_lang", "label": "Menu languages", "max": 25,
+   "how": "Partly translated = 5, German + English = 15, 3 or more languages = 25. Image-only menus and menus behind apps that block reading score 0 here."},
+  {"id": "allergens", "label": "Allergen info online", "max": 15,
+   "how": "The online menu carries an EU allergen legend (the 14 allergens, usually letters A–R). A note saying 'ask our staff' does not count."},
+  {"id": "booking", "label": "Book or order online", "max": 10,
+   "how": "An online table reservation, request form or webshop. Phone and email only do not count. Hotel-room booking does not count for a café."}
+]

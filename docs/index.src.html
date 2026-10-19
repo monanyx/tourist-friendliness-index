@@ -1,0 +1,539 @@
+<title>Innsbruck Tourist-Friendliness Index</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="How easy is it for a visitor who doesn't read German to choose, understand and book a table in Innsbruck's old town? An open audit of restaurant and café websites.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/*LEAFLET_CSS*/
+</style>
+<style>
+/* Layout: thesis header → language lens + controls → map | ranked list → venue detail → where points are lost → method.
+   Palette: cool alpine paper, slate ink, "Inn blue" accent; score bands are semantic (low / mid / high), separate from the accent. */
+:root {
+  --paper: #f3f6f8;
+  --panel: #ffffff;
+  --ink: #16212a;
+  --muted: #5a6875;
+  --line: #d9e1e7;
+  --soft: #e9eef2;
+  --accent: #1f5a86;
+  --accent-ink: #ffffff;
+  --low: #b9483a;
+  --mid: #b07a12;
+  --high: #2a7a55;
+  --map-bg: #e6ecf0;
+  --pill-ink: #ffffff;
+  --shadow: 0 1px 2px rgba(22, 33, 42, .06), 0 6px 24px rgba(22, 33, 42, .06);
+  --display: "Bricolage Grotesque", "Avenir Next Condensed", "Arial Narrow", system-ui, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --r: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0f151a; --panel: #162029; --ink: #e5ebef; --muted: #93a2ae; --line: #26333e; --soft: #1d2933;
+    --accent: #7fb2da; --accent-ink: #0f151a; --low: #e27b65; --mid: #e0ad4c; --high: #5cbb8b; --map-bg: #121b22; --pill-ink: #0f151a;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 24px rgba(0,0,0,.25); color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0f151a; --panel: #162029; --ink: #e5ebef; --muted: #93a2ae; --line: #26333e; --soft: #1d2933;
+  --accent: #7fb2da; --accent-ink: #0f151a; --low: #e27b65; --mid: #e0ad4c; --high: #5cbb8b; --map-bg: #121b22; --pill-ink: #0f151a;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 6px 24px rgba(0,0,0,.25); color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1240px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 28px 56px; }
+a { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.num, .mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+
+/* header */
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin: 0 0 10px; }
+h1 { font-family: var(--display); font-weight: 800; font-size: clamp(30px, 5.2vw, 58px); line-height: 1.02; letter-spacing: -.02em; margin: 0 0 14px; max-width: 18ch; text-wrap: balance; }
+h1 .de { color: var(--accent); }
+.lede { font-size: 17px; max-width: 64ch; margin: 0 0 22px; color: var(--ink); }
+.lede b { font-weight: 600; }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; margin-bottom: 26px; }
+.stat { background: var(--panel); padding: 14px 16px; min-width: 0; }
+.stat .v { font-family: var(--display); font-weight: 700; font-size: 34px; line-height: 1; letter-spacing: -.01em; }
+.stat .v small { font-family: var(--mono); font-size: 13px; font-weight: 400; color: var(--muted); margin-left: 3px; }
+.stat .l { font-size: 13px; color: var(--muted); margin-top: 6px; }
+@media (max-width: 720px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* controls */
+.controls { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin-bottom: 12px; }
+.lens { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.lens .lab { font-size: 13px; color: var(--muted); margin-right: 4px; }
+.chip { font: 500 13px var(--body); border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 999px; padding: 5px 12px; cursor: pointer; }
+.chip:hover { border-color: var(--accent); }
+.chip[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.chip .code { font-family: var(--mono); font-size: 11px; opacity: .7; margin-left: 4px; }
+.tools { display: flex; gap: 8px; flex-wrap: wrap; margin-left: auto; }
+.tools input, .tools select { font: 14px var(--body); color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; min-width: 0; }
+.tools input { width: 14rem; max-width: 100%; }
+.btn { font: 500 13px var(--body); border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 8px; padding: 6px 12px; cursor: pointer; }
+.btn:hover { border-color: var(--accent); }
+.btn[aria-expanded="true"] { border-color: var(--accent); color: var(--accent); }
+.lensnote { font-size: 14px; color: var(--muted); margin: 0 0 12px; min-height: 1.5em; }
+.lensnote b { color: var(--ink); font-weight: 600; }
+
+.weights { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 14px 16px; margin-bottom: 14px; }
+.weights p { margin: 0 0 10px; font-size: 13px; color: var(--muted); }
+.wgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 10px 22px; }
+.wrow { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; align-items: center; font-size: 13px; }
+.wrow input { grid-column: 1 / -1; width: 100%; accent-color: var(--accent); }
+.wrow .num { color: var(--muted); font-size: 12px; }
+.weights .btn { margin-top: 10px; }
+
+/* map + list */
+.split { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr); gap: 14px; align-items: stretch; margin-bottom: 14px; }
+@media (max-width: 860px) { .split { grid-template-columns: 1fr; } }
+.mapbox { position: relative; border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; min-height: 460px; background: var(--map-bg); background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px); background-size: 48px 48px; }
+#map { position: absolute; inset: 0; background: transparent; }
+@media (max-width: 860px) { .mapbox { min-height: 340px; } }
+.legend { position: absolute; left: 10px; bottom: 10px; z-index: 500; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; font-size: 12px; display: flex; gap: 10px; flex-wrap: wrap; box-shadow: var(--shadow); max-width: calc(100% - 20px); }
+.legend span { display: inline-flex; align-items: center; gap: 5px; }
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; flex: none; }
+.dot.low { background: var(--low); } .dot.mid { background: var(--mid); } .dot.high { background: var(--high); }
+.tilenote { position: absolute; right: 10px; top: 10px; z-index: 500; font-size: 12px; color: var(--muted); background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 4px 8px; }
+.leaflet-container { font-family: var(--body); background: transparent; }
+.tiles-light { filter: saturate(.35) contrast(.95) brightness(1.03); }
+.tiles-dark { filter: invert(1) hue-rotate(185deg) saturate(.3) brightness(.85) contrast(.9); }
+.leaflet-tooltip { font: 500 12px var(--body); color: var(--ink); background: var(--panel); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.leaflet-tooltip-top:before { border-top-color: var(--panel); }
+.leaflet-control-attribution { font-size: 10px; background: color-mix(in srgb, var(--panel) 85%, transparent) !important; color: var(--muted); }
+.leaflet-control-attribution a { color: var(--muted); }
+.leaflet-bar a { background: var(--panel); color: var(--ink); border-color: var(--line); }
+
+.list { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); display: flex; flex-direction: column; min-height: 0; max-height: 560px; }
+.listhead { display: flex; justify-content: space-between; align-items: baseline; padding: 12px 14px 8px; border-bottom: 1px solid var(--line); font-size: 13px; color: var(--muted); }
+.listhead b { font-family: var(--display); font-size: 17px; color: var(--ink); font-weight: 700; }
+.rows { overflow-y: auto; flex: 1; min-height: 0; }
+.row { all: unset; box-sizing: border-box; display: grid; grid-template-columns: 2.2rem minmax(0, 1fr) auto; gap: 2px 10px; align-items: center; width: 100%; padding: 9px 14px; border-bottom: 1px solid var(--soft); cursor: pointer; }
+.row:hover { background: var(--soft); }
+.row[aria-current="true"] { background: color-mix(in srgb, var(--accent) 12%, var(--panel)); box-shadow: inset 3px 0 0 var(--accent); }
+.row:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.row .rk { font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.row .nm { font-weight: 600; font-size: 14px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.row .ct { grid-column: 2; font-size: 12px; color: var(--muted); display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.row .sc { grid-row: 1 / span 2; grid-column: 3; text-align: right; }
+.score-pill { font-family: var(--mono); font-weight: 500; font-size: 14px; min-width: 2.6rem; display: inline-block; text-align: center; border-radius: 6px; padding: 2px 6px; color: var(--pill-ink); }
+.score-pill.low { background: var(--low); } .score-pill.mid { background: var(--mid); } .score-pill.high { background: var(--high); }
+.ok { color: var(--high); font-weight: 600; } .no { color: var(--muted); }
+.tag { font-family: var(--mono); font-size: 11px; border: 1px solid var(--line); border-radius: 4px; padding: 0 5px; color: var(--muted); }
+.tag.on { border-color: var(--high); color: var(--high); }
+.empty { padding: 20px 14px; color: var(--muted); font-size: 14px; }
+
+/* detail */
+.detail { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 20px; margin-bottom: 28px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 22px 32px; scroll-margin-top: 16px; }
+@media (max-width: 860px) { .detail { grid-template-columns: 1fr; } }
+.dhead { grid-column: 1 / -1; display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+.ring { position: relative; width: 84px; height: 84px; flex: none; }
+.ring svg { width: 84px; height: 84px; transform: rotate(-90deg); }
+.ring .v { position: absolute; inset: 0; display: grid; place-items: center; font-family: var(--display); font-weight: 800; font-size: 28px; }
+.dhead h2 { font-family: var(--display); font-weight: 800; font-size: clamp(24px, 3.4vw, 34px); line-height: 1.05; margin: 0; letter-spacing: -.01em; }
+.dhead .meta { font-size: 14px; color: var(--muted); margin-top: 4px; }
+.dhead .meta a { word-break: break-all; }
+.dnote { grid-column: 1 / -1; margin: 0; font-size: 15px; max-width: 75ch; padding: 10px 14px; background: var(--soft); border-radius: 8px; }
+.sect h3 { font-family: var(--mono); font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin: 0 0 10px; }
+.brk { display: grid; grid-template-columns: minmax(0, 9.5rem) minmax(0, 1fr) 3.4rem; gap: 8px 10px; align-items: center; font-size: 13px; }
+.bar { height: 8px; background: var(--soft); border-radius: 4px; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--accent); border-radius: 4px; }
+.brk .num { text-align: right; font-size: 12px; color: var(--muted); }
+.langs { display: grid; gap: 8px; font-size: 13px; margin-top: 16px; }
+.langs > div { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+.langs .k { width: 5.5rem; color: var(--muted); flex: none; }
+.wins { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.wins li { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 10px; align-items: baseline; font-size: 14px; }
+.wins .gain { font-family: var(--mono); font-weight: 500; color: var(--high); text-align: right; }
+.potential { font-size: 13px; color: var(--muted); margin: 12px 0 0; }
+.share { font-size: 12px; margin-top: 12px; }
+
+/* sections */
+.two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; margin-bottom: 30px; }
+@media (max-width: 860px) { .two { grid-template-columns: 1fr; } }
+h2.sh { font-family: var(--display); font-weight: 800; font-size: 26px; letter-spacing: -.01em; margin: 0 0 6px; line-height: 1.1; }
+.sub { color: var(--muted); font-size: 14px; margin: 0 0 16px; max-width: 60ch; }
+.crit { display: grid; gap: 10px; }
+.crit .r { display: grid; grid-template-columns: minmax(0, 10rem) minmax(0, 1fr) 3rem; gap: 10px; align-items: center; font-size: 14px; }
+.crit .bar { height: 12px; }
+.crit .bar i.weak { background: var(--low); }
+.crit .num { text-align: right; font-size: 13px; }
+table.rub { width: 100%; border-collapse: collapse; font-size: 13px; }
+.rub th, .rub td { text-align: left; padding: 8px 8px 8px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+.rub th { font-family: var(--mono); font-weight: 500; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+.rub td.num { white-space: nowrap; }
+.method p { font-size: 14px; max-width: 70ch; }
+.excluded { font-size: 13px; color: var(--muted); }
+footer { border-top: 1px solid var(--line); padding-top: 18px; font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 8px 22px; justify-content: space-between; }
+.load { padding: 40px 0; color: var(--muted); }
+@media (prefers-reduced-motion: no-preference) {
+  .bar i { transition: width .45s cubic-bezier(.2,.7,.2,1); }
+  .ring circle.fg { transition: stroke-dashoffset .5s cubic-bezier(.2,.7,.2,1); }
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow" id="eyebrow">Innsbruck · Altstadt · open website audit</p>
+    <h1>Can a visitor read the menu before they walk in?</h1>
+    <p class="lede" id="lede">Loading the audit…</p>
+    <div class="stats" id="stats" aria-live="polite"></div>
+  </header>
+
+  <section aria-label="Explore venues">
+    <div class="controls">
+      <div class="lens" role="group" aria-label="Guest language">
+        <span class="lab">I read</span>
+        <button class="chip" data-lang="" aria-pressed="true" id="lens-any">Any language</button>
+        <button class="chip" data-lang="en" aria-pressed="false" id="lens-en">English<span class="code">EN</span></button>
+        <button class="chip" data-lang="it" aria-pressed="false" id="lens-it">Italiano<span class="code">IT</span></button>
+        <button class="chip" data-lang="fr" aria-pressed="false" id="lens-fr">Français<span class="code">FR</span></button>
+        <button class="chip" data-lang="es" aria-pressed="false" id="lens-es">Español<span class="code">ES</span></button>
+      </div>
+      <div class="tools">
+        <input type="search" id="q" placeholder="Search venues" aria-label="Search venues">
+        <select id="cat" aria-label="Type of venue">
+          <option value="">All venues</option>
+          <option value="Restaurant">Restaurants</option>
+          <option value="Café">Cafés and bars</option>
+        </select>
+        <button class="btn" id="wtoggle" aria-expanded="false" aria-controls="weights">Change what counts</button>
+      </div>
+    </div>
+    <p class="lensnote" id="lensnote" aria-live="polite"></p>
+    <div class="weights" id="weights" hidden>
+      <p>Drag to decide how much each criterion matters to you. Scores and ranking update live. The published index uses the default weights.</p>
+      <div class="wgrid" id="wgrid"></div>
+      <button class="btn" id="wreset">Reset to published weights</button>
+    </div>
+
+    <div class="split">
+      <div class="mapbox">
+        <div id="map" role="region" aria-label="Map of venues"></div>
+        <div class="legend"><span><i class="dot high"></i>70–100</span><span><i class="dot mid"></i>40–69</span><span><i class="dot low"></i>0–39</span></div>
+        <div class="tilenote" id="tilenote" hidden>Street map loads on the hosted site</div>
+      </div>
+      <div class="list">
+        <div class="listhead"><b id="listtitle">Ranking</b><span id="listcount"></span></div>
+        <div class="rows" id="rows" role="list"></div>
+      </div>
+    </div>
+
+    <article class="detail" id="detail" aria-live="polite"></article>
+  </section>
+
+  <section class="two">
+    <div>
+      <h2 class="sh" id="where">Where the old town loses points</h2>
+      <p class="sub">Share of all possible points that venues collected, per criterion. The two weakest are marked.</p>
+      <div class="crit" id="crit"></div>
+    </div>
+    <div class="method" id="method">
+      <h2 class="sh">How the score works</h2>
+      <p class="sub">Six things a visitor needs before walking in, worth 100 points together.</p>
+      <div style="overflow-x:auto"><table class="rub" id="rub"><thead><tr><th>Criterion</th><th>Points</th><th>How it's scored</th></tr></thead><tbody></tbody></table></div>
+    </div>
+  </section>
+
+  <section class="method two" aria-label="Method and data">
+    <div>
+      <h2 class="sh">Method</h2>
+      <p>Each venue's own website was crawled by a Python script that finds language versions, menu links and PDFs, flags scanned image menus, detects which languages the dishes are written in, and looks for an EU allergen legend and online booking. Every finding was then checked by hand before scoring. The crawler and the person caught different mistakes, which is the point of using both.</p>
+      <p>Only what a visitor can see online is measured. Printed menus, staff language skills and food quality are not part of the score.</p>
+    </div>
+    <div>
+      <h2 class="sh">Scope</h2>
+      <p id="scope"></p>
+      <p class="excluded">Left out: Weinhaus Happ (its former domain now hosts a third-party article saying the restaurant has closed), Due Sicilie (its domain now forwards to a different pizzeria) and Café Sacher Innsbruck (no own page on the Sacher website).</p>
+      <p id="repo"></p>
+    </div>
+  </section>
+
+  <footer>
+    <span>Research and build by <span id="author">Mona</span> · Data checked <span id="checked" class="mono"></span></span>
+    <span>Map data and tiles © OpenStreetMap contributors</span>
+  </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js"></script>
+<script>
+(() => {
+  // Edit these two lines after you publish the repository.
+  const AUTHOR = "Mona";
+  const REPO_URL = ""; // e.g. "https://github.com/your-username/tourist-friendliness-index"
+
+  const LANGS = { de: "German", en: "English", it: "Italian", fr: "French", es: "Spanish", nl: "Dutch" };
+  const LANG_ADJ = { en: "English", it: "Italian", fr: "French", es: "Spanish" };
+  const $ = (s) => document.querySelector(s);
+  const el = (tag, attrs = {}, ...kids) => {
+    const n = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs)) {
+      if (k === "class") n.className = v; else if (k === "text") n.textContent = v; else n.setAttribute(k, v);
+    }
+    kids.flat().forEach((k) => k != null && n.append(k));
+    return n;
+  };
+  const slug = (s) => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  const band = (s) => (s >= 70 ? "high" : s >= 40 ? "mid" : "low");
+
+  let DATA, RUBRIC, weights = {}, defaults = {};
+  const state = { lang: "", q: "", cat: "", selected: null };
+  let map, markers = {};
+
+  function adjusted(v) {
+    let num = 0, den = 0;
+    for (const c of RUBRIC) {
+      const w = weights[c.id];
+      num += (v.points[c.id] / c.max) * w;
+      den += w;
+    }
+    return den ? Math.round((num / den) * 100) : 0;
+  }
+  const custom = () => RUBRIC.some((c) => weights[c.id] !== defaults[c.id]);
+  const menuIn = (v, l) => v.menu_status === "yes" && v.menu_translation !== "partial" && v.menu_languages.includes(l);
+  const d3median = (a) => { const s = [...a].sort((x, y) => x - y); return s[Math.floor(s.length / 2)]; };
+  const siteIn = (v, l) => v.site_status === "live" && v.site_languages.includes(l);
+
+  function visible() {
+    const q = state.q.trim().toLowerCase();
+    let list = DATA.venues
+      .map((v) => ({ v, s: adjusted(v) }))
+      .filter(({ v }) => !state.cat || (state.cat === "Café" ? /café|bar/i.test(v.category) : /restaurant/i.test(v.category)))
+      .filter(({ v }) => !q || `${v.venue} ${v.category} ${v.address} ${v.note}`.toLowerCase().includes(q));
+    const l = state.lang;
+    list.sort((a, b) => {
+      if (l) {
+        const ka = (menuIn(a.v, l) ? 2 : 0) + (siteIn(a.v, l) ? 1 : 0);
+        const kb = (menuIn(b.v, l) ? 2 : 0) + (siteIn(b.v, l) ? 1 : 0);
+        if (ka !== kb) return kb - ka;
+      }
+      return b.s - a.s || a.v.venue.localeCompare(b.v.venue);
+    });
+    return list;
+  }
+
+  function renderHeader() {
+    const s = DATA.summary;
+    $("#eyebrow").textContent = `Innsbruck · Altstadt · ${s.venues} venues · websites checked ${fmtDate(s.checked)}`;
+    const lede = $("#lede");
+    lede.textContent = "";
+    lede.append(
+      "Tourists fill Innsbruck's old town all year, but most of its restaurant and café websites still speak only German. Across ",
+      el("b", { text: `${s.venues} venues` }), ", the average score is ",
+      el("b", { text: `${s.average} out of 100` }), ", and only ",
+      el("b", { text: `${s.english_menu}` }), " publish a menu a non-German speaker can read."
+    );
+    const stats = [
+      [s.average, "/100", "Average score"],
+      [s.english_menu, `of ${s.venues}`, "Menu online in English"],
+      [s.allergens, `of ${s.venues}`, "Allergen legend online"],
+      [s.no_website, `of ${s.venues}`, "No working website"],
+    ];
+    $("#stats").replaceChildren(...stats.map(([v, u, l]) => el("div", { class: "stat" }, el("div", { class: "v" }, String(v), el("small", { text: u })), el("div", { class: "l", text: l }))));
+    $("#checked").textContent = fmtDate(s.checked);
+    $("#author").textContent = AUTHOR;
+    $("#scope").textContent = `${s.venues} restaurants, cafés and bars in and around the old town (Altstadt, Maria-Theresien-Straße, Museumstraße). Pilot round, checked ${fmtDate(s.checked)}. More venues and a hotel edition are planned.`;
+    if (REPO_URL) $("#repo").replaceChildren("Code, raw crawler output and the full dataset: ", el("a", { href: REPO_URL, text: REPO_URL.replace(/^https?:\/\//, "") }));
+  }
+  function fmtDate(d) {
+    const dt = new Date(d + "T12:00:00Z");
+    return isNaN(dt) ? d : dt.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
+  }
+
+  function renderLensNote() {
+    const n = $("#lensnote");
+    n.textContent = "";
+    const l = state.lang, total = DATA.venues.length;
+    if (!l) {
+      n.append("Pick a language to see the old town through that visitor's eyes.");
+      return;
+    }
+    const m = DATA.venues.filter((v) => menuIn(v, l)).length;
+    const w = DATA.venues.filter((v) => siteIn(v, l)).length;
+    n.append(el("b", { text: `${m} of ${total}` }), ` places put a menu in ${LANG_ADJ[l]} online, and `, el("b", { text: `${w}` }), ` have a website in ${LANG_ADJ[l]}. Those come first below; the rest fade on the map.`);
+  }
+
+  function renderList() {
+    const list = visible();
+    $("#listtitle").textContent = state.lang ? `Best for ${LANG_ADJ[state.lang]} readers` : custom() ? "Ranking, your weights" : "Ranking";
+    $("#listcount").textContent = `${list.length} shown`;
+    const rows = $("#rows");
+    if (!list.length) { rows.replaceChildren(el("div", { class: "empty", text: "No venue matches. Clear the search or pick another type." })); return; }
+    rows.replaceChildren(...list.map(({ v, s }, i) => {
+      const ct = el("span", { class: "ct" }, v.category);
+      if (state.lang) {
+        ct.append(el("span", { class: "tag" + (menuIn(v, state.lang) ? " on" : ""), text: `menu ${state.lang.toUpperCase()}` }),
+                  el("span", { class: "tag" + (siteIn(v, state.lang) ? " on" : ""), text: `site ${state.lang.toUpperCase()}` }));
+      }
+      const b = el("button", { class: "row", role: "listitem", "data-id": slug(v.venue), "aria-label": `${v.venue}, score ${s}` },
+        el("span", { class: "rk", text: String(i + 1).padStart(2, "0") }),
+        el("span", { class: "nm", text: v.venue }),
+        ct,
+        el("span", { class: "sc" }, el("span", { class: `score-pill ${band(s)}`, text: String(s) })));
+      if (state.selected === slug(v.venue)) b.setAttribute("aria-current", "true");
+      b.addEventListener("click", () => select(slug(v.venue), true));
+      return b;
+    }));
+    renderMarkers(list);
+  }
+
+  function renderMarkers(list) {
+    if (!map) return;
+    const shown = new Set(list.map(({ v }) => slug(v.venue)));
+    const css = getComputedStyle(document.documentElement);
+    for (const v of DATA.venues) {
+      const id = slug(v.venue), m = markers[id];
+      if (!m) continue;
+      const s = adjusted(v);
+      const fits = !state.lang || menuIn(v, state.lang) || siteIn(v, state.lang);
+      const sel = state.selected === id;
+      m.setStyle({
+        radius: 5 + s / 20 + (sel ? 3 : 0),
+        color: sel ? css.getPropertyValue("--ink").trim() : css.getPropertyValue("--panel").trim(),
+        weight: sel ? 3 : 1.5,
+        fillColor: css.getPropertyValue(`--${band(s)}`).trim(),
+        fillOpacity: shown.has(id) ? (fits ? 0.95 : 0.22) : 0,
+        opacity: shown.has(id) ? 1 : 0,
+      });
+      m.setTooltipContent(`${v.venue} · ${s}`);
+      if (sel) m.bringToFront();
+    }
+  }
+
+  function select(id, fromList) {
+    state.selected = id;
+    try { history.replaceState(null, "", "#" + id); } catch (e) {}
+    const v = DATA.venues.find((x) => slug(x.venue) === id);
+    renderList();
+    renderDetail(v);
+    if (map && markers[id] && v.lat) map.panTo([v.lat, v.lon], { animate: true });
+    if (fromList && window.matchMedia("(max-width: 860px)").matches) $("#detail").scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function renderDetail(v) {
+    const d = $("#detail");
+    if (!v) { d.replaceChildren(el("p", { class: "empty", text: "Pick a venue on the map or in the list to see its breakdown." })); return; }
+    const s = adjusted(v);
+    const C = 2 * Math.PI * 36;
+    const ring = el("div", { class: "ring", "aria-hidden": "true" });
+    ring.innerHTML = `<svg viewBox="0 0 84 84"><circle cx="42" cy="42" r="36" fill="none" stroke="var(--soft)" stroke-width="8"></circle><circle class="fg" cx="42" cy="42" r="36" fill="none" stroke="var(--${band(s)})" stroke-width="8" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C * (1 - s / 100)}"></circle></svg>`;
+    ring.append(el("span", { class: "v", text: String(s) }));
+    const meta = el("div", { class: "meta" }, `${v.category} · ${v.address}`);
+    if (v.website) meta.append(" · ", el("a", { href: v.website, target: "_blank", rel: "noopener", text: v.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "") }));
+    const head = el("div", { class: "dhead" }, ring, el("div", {}, el("h2", { text: v.venue }), meta));
+
+    const brk = el("div", { class: "brk" });
+    for (const c of RUBRIC) {
+      const p = v.points[c.id];
+      brk.append(el("span", { text: c.label }), el("span", { class: "bar" }, el("i", { style: `width:${(p / c.max) * 100}%` })), el("span", { class: "num", text: `${p}/${c.max}` }));
+    }
+    const chips = (arr) => arr.length ? arr.map((c) => el("span", { class: "tag on", title: LANGS[c] || c, text: c.toUpperCase() })) : [el("span", { class: "no", text: "none" })];
+    const menuText = { yes: null, image: "photo or scan only", app: "inside an app", broken: "link broken", no: "not online" }[v.menu_status];
+    const langs = el("div", { class: "langs" },
+      el("div", {}, el("span", { class: "k", text: "Website" }), ...chips(v.site_languages)),
+      el("div", {}, el("span", { class: "k", text: "Menu" }), ...(menuText ? [el("span", { class: "no", text: menuText })] : chips(v.menu_languages)), v.menu_translation === "partial" ? el("span", { class: "no", text: "(partly translated)" }) : null),
+      el("div", {}, el("span", { class: "k", text: "Allergens" }), el("span", { class: v.allergens === "yes" ? "ok" : "no", text: v.allergens === "yes" ? "EU legend on menu" : v.allergens === "unknown" ? "can't be checked" : "not online" })),
+      el("div", {}, el("span", { class: "k", text: "Booking" }), el("span", { class: v.booking === "yes" ? "ok" : "no", text: v.booking_detail })));
+    const left = el("div", { class: "sect" }, el("h3", { text: "Score breakdown" }), brk, langs);
+
+    const right = el("div", { class: "sect" }, el("h3", { text: "Quick wins" }));
+    if (v.quick_wins.length) {
+      right.append(el("ul", { class: "wins" }, ...v.quick_wins.slice(0, 4).map((w) => el("li", {}, el("span", { class: "gain", text: `+${w.gain}` }), el("span", { text: w.text })))));
+      const top2 = Math.min(100, v.score + v.quick_wins.slice(0, 2).reduce((a, w) => a + w.gain, 0));
+      right.append(el("p", { class: "potential", text: `Fixing the first two would lift the published score from ${v.score} to ${top2}.` }));
+    } else {
+      right.append(el("p", { class: "potential", text: "Full marks. This is the reference the rest of the old town can copy." }));
+    }
+    right.append(el("p", { class: "share mono", text: `Link to this venue: #${slug(v.venue)}` }));
+    d.replaceChildren(head, el("p", { class: "dnote", text: v.note }), left, right);
+  }
+
+  function renderCriteria() {
+    const crit = DATA.summary.criteria.map((c) => ({ ...c, share: c.collected / c.possible })).sort((a, b) => a.share - b.share);
+    $("#crit").replaceChildren(...crit.map((c, i) => el("div", { class: "r" },
+      el("span", { text: c.label }),
+      el("span", { class: "bar" }, el("i", { class: i < 2 ? "weak" : "", style: `width:${Math.max(2, c.share * 100)}%` })),
+      el("span", { class: "num", text: `${Math.round(c.share * 100)}%` }))));
+    $("#rub tbody").replaceChildren(...RUBRIC.map((c) => el("tr", {}, el("td", { text: c.label }), el("td", { class: "num", text: String(c.max) }), el("td", { text: c.how }))));
+  }
+
+  function renderWeights() {
+    $("#wgrid").replaceChildren(...RUBRIC.map((c) => {
+      const out = el("span", { class: "num", id: `wv-${c.id}`, text: String(weights[c.id]) });
+      const input = el("input", { type: "range", min: "0", max: "40", step: "5", value: String(weights[c.id]), id: `w-${c.id}`, "aria-label": `Weight for ${c.label}` });
+      input.addEventListener("input", () => {
+        weights[c.id] = Number(input.value);
+        out.textContent = input.value;
+        renderList();
+        if (state.selected) renderDetail(DATA.venues.find((x) => slug(x.venue) === state.selected));
+      });
+      return el("label", { class: "wrow", for: `w-${c.id}` }, el("span", { text: c.label }), out, input);
+    }));
+  }
+
+  function initMap() {
+    if (!window.L) { $("#tilenote").hidden = false; $("#tilenote").textContent = "Map library could not load"; return; }
+    map = L.map("map", { scrollWheelZoom: false, zoomControl: true, attributionControl: true });
+    const dark = () => document.documentElement.dataset.theme === "dark" || (!document.documentElement.dataset.theme && matchMedia("(prefers-color-scheme: dark)").matches);
+    let tiles;
+    const setTiles = () => {
+      if (tiles) map.removeLayer(tiles);
+      tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19, className: dark() ? "tiles-dark" : "tiles-light",
+        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      }).addTo(map);
+      let errs = 0;
+      tiles.on("tileerror", () => { if (++errs === 3) $("#tilenote").hidden = false; });
+    };
+    setTiles();
+    matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change", () => { setTiles(); renderList(); });
+    const pts = [];
+    for (const v of DATA.venues) {
+      if (v.lat == null) continue;
+      const id = slug(v.venue);
+      const m = L.circleMarker([v.lat, v.lon], { radius: 8 }).addTo(map);
+      m.bindTooltip(v.venue, { direction: "top", offset: [0, -6] });
+      m.on("click", () => select(id, false));
+      m.on("keypress", (e) => { if (e.originalEvent.key === "Enter") select(id, false); });
+      markers[id] = m;
+      pts.push([v.lat, v.lon]);
+    }
+    // Frame the old town core; venues further out are a pan away.
+    const mid = [d3median(pts.map((p) => p[0])), d3median(pts.map((p) => p[1]))];
+    const core = pts.filter((p) => Math.abs(p[0] - mid[0]) < 0.0045 && Math.abs(p[1] - mid[1]) < 0.0065);
+    map.fitBounds(core.length > 3 ? core : pts, { padding: [24, 24] });
+  }
+
+  function bind() {
+    document.querySelectorAll(".chip[data-lang]").forEach((b) => b.addEventListener("click", () => {
+      state.lang = b.dataset.lang;
+      document.querySelectorAll(".chip[data-lang]").forEach((x) => x.setAttribute("aria-pressed", String(x === b)));
+      renderLensNote(); renderList();
+    }));
+    $("#q").addEventListener("input", (e) => { state.q = e.target.value; renderList(); });
+    $("#cat").addEventListener("change", (e) => { state.cat = e.target.value; renderList(); });
+    $("#wtoggle").addEventListener("click", () => {
+      const open = $("#weights").hidden;
+      $("#weights").hidden = !open;
+      $("#wtoggle").setAttribute("aria-expanded", String(open));
+    });
+    $("#wreset").addEventListener("click", () => { weights = { ...defaults }; renderWeights(); renderList(); if (state.selected) select(state.selected, false); });
+  }
+
+  fetch("data/venues.json")
+    .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then((json) => {
+      DATA = json; RUBRIC = json.rubric;
+      RUBRIC.forEach((c) => { defaults[c.id] = c.max; });
+      weights = { ...defaults };
+      renderHeader(); renderLensNote(); renderCriteria(); renderWeights(); bind(); initMap();
+      const fromHash = location.hash.slice(1);
+      const first = DATA.venues.find((v) => slug(v.venue) === fromHash) || DATA.venues[0];
+      select(slug(first.venue), false);
+    })
+    .catch(() => { $("#lede").textContent = "The data file could not be loaded. If you opened this file directly from your computer, run it through a local server (see the README)."; });
+})();
+</script>
