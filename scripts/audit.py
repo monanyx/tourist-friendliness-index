@@ -87,8 +87,11 @@ IMAGE_EXT = (".jpg", ".jpeg", ".png", ".webp", ".gif")
 
 
 def has_allergen_legend(text: str) -> bool:
+    """True if the text names most EU allergens or tags dishes with letter codes like 'A, C, G'."""
     low = text.lower()
-    return sum(1 for pat in ALLERGEN_NAMES if re.search(pat, low)) >= 6
+    if sum(1 for pat in ALLERGEN_NAMES if re.search(pat, low)) >= 6:
+        return True
+    return len(re.findall(r"\b[A-HL-PR](?:\s*,\s*[A-HL-PR]){1,}\b", text)) >= 5
 
 
 def get(url: str) -> requests.Response | None:

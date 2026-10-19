@@ -329,7 +329,7 @@ footer { border-top: 1px solid var(--line); padding-top: 18px; font-size: 13px; 
     const stats = [
       [s.average, "/100", "Average score"],
       [s.english_menu, `of ${s.venues}`, "Menu online in English"],
-      [s.allergens, `of ${s.venues}`, "Allergen legend online"],
+      [s.allergens, `of ${s.venues}`, "Allergen codes online"],
       [s.no_website, `of ${s.venues}`, "No working website"],
     ];
     $("#stats").replaceChildren(...stats.map(([v, u, l]) => el("div", { class: "stat" }, el("div", { class: "v" }, String(v), el("small", { text: u })), el("div", { class: "l", text: l }))));

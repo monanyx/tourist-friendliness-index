@@ -13,9 +13,9 @@ Innsbruck's old town is full of tourists all year, but most of its restaurant an
 | | |
 |---|---|
 | Venues audited | 21 restaurants, cafés and bars in and around the Altstadt |
-| Average score | **37 / 100** |
+| Average score | **36 / 100** |
 | Menu online in English (or more languages) | **6 of 21** |
-| EU allergen legend on the online menu | **6 of 21** |
+| EU allergen codes on the online menu | **5 of 21** |
 | No working website at all | **3 of 21** |
 
 - **One venue scores 100.** Stiftskeller publishes its full menu in five languages with an allergen legend and an online request form. It proves the standard is reachable.
@@ -41,7 +41,7 @@ Six things a visitor needs before walking in, worth 100 points together:
 | Website languages | 25 | 2 languages = 15, 3 or more = 25. |
 | Menu online | 15 | A food menu is reachable from the website. |
 | Menu languages | 25 | Partly translated = 5, German + English = 15, 3+ languages = 25. Image-only menus score 0 here. |
-| Allergen info online | 15 | An EU allergen legend (the 14 allergens, letters A–R) on the online menu. |
+| Allergen info online | 15 | EU allergen letter codes (A–R) on each dish, or a legend. "Ask our staff" doesn't count. |
 | Book or order online | 10 | Online reservation, request form or webshop. Phone and email don't count. |
 
 The full rubric lives in [`data/rubric.json`](data/rubric.json); scoring logic is in [`scripts/score.py`](scripts/score.py).
@@ -53,12 +53,12 @@ The full rubric lives in [`data/rubric.json`](data/rubric.json); scoring logic i
    - finds menu links and downloads menu PDFs and pages
    - extracts text from PDFs and flags image-only (scanned) menus
    - estimates which languages the dishes are written in, using menu-specific vocabulary per language
-   - checks for a real EU allergen legend (at least six of the 14 allergens named, not just "ask our staff")
+   - checks for real allergen information: a legend naming most of the 14 EU allergens, or letter codes on the dishes, not just "ask our staff"
    - looks for online booking and ordering, and flags off-topic content such as casino advertising
 
    The raw output is kept in [`data/raw/auto_audit.json`](data/raw/auto_audit.json).
 
-2. **Human review.** Every finding was checked by hand before it went into [`data/venues.csv`](data/venues.csv). The two caught different things. The crawler found English and Italian site versions that the first manual pass missed. Manual review caught a lunch PDF that only *mentioned* allergens, and a "Menü" page with no dishes on it.
+2. **Human review.** Every finding was checked by hand before it went into [`data/venues.csv`](data/venues.csv). The two caught different things. The crawler found English and Italian site versions that the first manual pass missed. Manual review caught a "Menü" page with no dishes on it and a café that tags each item with allergen letters but has no legend. A stricter allergen rule added after review also corrected one of the manual findings: a burger restaurant whose menu only says to ask the staff.
 
 3. **Scoring and site build** ([`scripts/score.py`](scripts/score.py), [`scripts/build_site.py`](scripts/build_site.py)). Scores, quick wins and summary figures are computed from the reviewed data and written to `docs/data/`, which the site reads.
 

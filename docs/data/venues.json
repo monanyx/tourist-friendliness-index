@@ -1,10 +1,10 @@
 {
  "summary": {
   "venues": 21,
-  "average": 37,
+  "average": 36,
   "checked": "2026-10-19",
   "english_menu": 6,
-  "allergens": 6,
+  "allergens": 5,
   "no_website": 3,
   "criteria": [
    {
@@ -43,8 +43,8 @@
     "id": "allergens",
     "label": "Allergen info online",
     "max": 15,
-    "how": "The online menu carries an EU allergen legend (the 14 allergens, usually letters A–R). A note saying 'ask our staff' does not count.",
-    "collected": 90,
+    "how": "The online menu marks allergens with the EU letter codes (A–R) per dish, or lists them in a legend. A note saying 'ask our staff' does not count.",
+    "collected": 75,
     "possible": 315
    },
    {
@@ -86,7 +86,7 @@
    "id": "allergens",
    "label": "Allergen info online",
    "max": 15,
-   "how": "The online menu carries an EU allergen legend (the 14 allergens, usually letters A–R). A note saying 'ask our staff' does not count."
+   "how": "The online menu marks allergens with the EU letter codes (A–R) per dish, or lists them in a legend. A note saying 'ask our staff' does not count."
   },
   {
    "id": "booking",
@@ -283,51 +283,6 @@
    "rank": 4
   },
   {
-   "venue": "Ludwig",
-   "category": "Restaurant",
-   "address": "Museumstraße 3",
-   "lat": 47.267401,
-   "lon": 11.395514,
-   "website": "https://www.ludwig-burger.at/",
-   "site_status": "live",
-   "site_languages": [
-    "de"
-   ],
-   "menu_status": "yes",
-   "menu_languages": [
-    "de",
-    "en"
-   ],
-   "menu_translation": "full",
-   "allergens": "yes",
-   "booking": "yes",
-   "booking_detail": "Online table reservation",
-   "note": "Separate English menu with allergens and online booking. Only the website itself is German.",
-   "checked": "2026-10-19",
-   "points": {
-    "site": 10,
-    "site_lang": 0,
-    "menu": 15,
-    "menu_lang": 15,
-    "allergens": 15,
-    "booking": 10
-   },
-   "score": 65,
-   "quick_wins": [
-    {
-     "criterion": "site_lang",
-     "gain": 15,
-     "text": "Add an English version of the website."
-    },
-    {
-     "criterion": "menu_lang",
-     "gain": 10,
-     "text": "Add a third menu language, such as Italian or French."
-    }
-   ],
-   "rank": 5
-  },
-  {
    "venue": "Fischerhäusl",
    "category": "Restaurant",
    "address": "Herrengasse 8",
@@ -369,7 +324,7 @@
      "text": "Print the EU allergen letters (A–R) next to each dish on the online menu."
     }
    ],
-   "rank": 6
+   "rank": 5
   },
   {
    "venue": "Goldener Adler",
@@ -415,7 +370,7 @@
      "text": "Print the EU allergen letters (A–R) next to each dish on the online menu."
     }
    ],
-   "rank": 7
+   "rank": 6
   },
   {
    "venue": "Lichtblick",
@@ -461,6 +416,56 @@
      "text": "Print the EU allergen letters (A–R) next to each dish on the online menu."
     }
    ],
+   "rank": 7
+  },
+  {
+   "venue": "Ludwig",
+   "category": "Restaurant",
+   "address": "Museumstraße 3",
+   "lat": 47.267401,
+   "lon": 11.395514,
+   "website": "https://www.ludwig-burger.at/",
+   "site_status": "live",
+   "site_languages": [
+    "de"
+   ],
+   "menu_status": "yes",
+   "menu_languages": [
+    "de",
+    "en"
+   ],
+   "menu_translation": "full",
+   "allergens": "no",
+   "booking": "yes",
+   "booking_detail": "Online table reservation",
+   "note": "Separate English menu and online table booking. Allergens only on request, and the website itself is German.",
+   "checked": "2026-10-19",
+   "points": {
+    "site": 10,
+    "site_lang": 0,
+    "menu": 15,
+    "menu_lang": 15,
+    "allergens": 0,
+    "booking": 10
+   },
+   "score": 50,
+   "quick_wins": [
+    {
+     "criterion": "site_lang",
+     "gain": 15,
+     "text": "Add an English version of the website."
+    },
+    {
+     "criterion": "allergens",
+     "gain": 15,
+     "text": "Print the EU allergen letters (A–R) next to each dish on the online menu."
+    },
+    {
+     "criterion": "menu_lang",
+     "gain": 10,
+     "text": "Add a third menu language, such as Italian or French."
+    }
+   ],
    "rank": 8
   },
   {
@@ -485,7 +490,7 @@
    "allergens": "yes",
    "booking": "no",
    "booking_detail": "None",
-   "note": "Allergen note in four languages, but most dishes are only named in German.",
+   "note": "Allergen letters on each item and a four-language allergen note, but most dishes are only named in German.",
    "checked": "2026-10-19",
    "points": {
     "site": 10,
