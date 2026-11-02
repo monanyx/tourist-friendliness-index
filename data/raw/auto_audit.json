@@ -2,11 +2,11 @@
   {
     "venue": "Stiftskeller",
     "website": "https://www.stiftskeller.eu/",
-    "checked": "2026-10-26T11:12:12+00:00",
+    "checked": "2026-11-02T13:36:06+00:00",
     "http": 200,
     "final_url": "https://www.stiftskeller.eu/",
     "title": "Restaurant Bierlokal in Innsbruck - Altstadt - Stiftskeller: Stiftskeller Innsbruck",
-    "chars": 2948,
+    "chars": 3480,
     "site_status": "live",
     "site_languages": [
       "de",
@@ -40,13 +40,13 @@
       {
         "url": "https://www.stiftskeller.eu/fileadmin/user_upload/dokumente/stiftskeller-innsbruck-wochenkarte.pdf",
         "http": 200,
-        "bytes": 453765,
+        "bytes": 399725,
         "kind": "pdf",
         "pages": 1,
         "status": "ok",
-        "chars": 2791,
+        "chars": 2659,
         "languages": {
-          "de": 33
+          "de": 28
         },
         "allergens": false
       }
@@ -55,7 +55,7 @@
   {
     "venue": "Weisses Rössl",
     "website": "https://www.roessl.at/",
-    "checked": "2026-10-26T11:12:37+00:00",
+    "checked": "2026-11-02T13:36:27+00:00",
     "http": 200,
     "final_url": "https://www.roessl.at/",
     "title": "Innsbruck Boutiquehotel Weisses Rössl im Altstadt Zentrum",
@@ -77,7 +77,7 @@
   {
     "venue": "Gasthaus Goldenes Dachl",
     "website": "https://www.goldenesdachl.com/",
-    "checked": "2026-10-26T11:12:40+00:00",
+    "checked": "2026-11-02T13:36:30+00:00",
     "http": 200,
     "final_url": "https://www.goldenesdachl.com/",
     "title": "Gasthaus Goldenes Dachl | Einkehren und genieÃen",
@@ -126,11 +126,11 @@
   {
     "venue": "Goldener Adler",
     "website": "https://www.goldeneradler.com/",
-    "checked": "2026-10-26T11:12:47+00:00",
+    "checked": "2026-11-02T13:36:36+00:00",
     "http": 200,
     "final_url": "https://www.goldeneradler.com/",
     "title": "Restaurant Goldener Adler Innsbruck Altstadt",
-    "chars": 20756,
+    "chars": 17978,
     "site_status": "live",
     "site_languages": [
       "de",
@@ -141,9 +141,7 @@
     ],
     "booking_signals": [
       "bestell",
-      "order",
       "reserv",
-      "shop",
       "tisch"
     ],
     "allergens_on_site": false,
@@ -152,7 +150,7 @@
       {
         "url": "https://www.goldeneradler.com/aktuelles/martini-gansl-essen/",
         "http": 200,
-        "bytes": 1027961,
+        "bytes": 1027923,
         "kind": "html",
         "status": "ok",
         "chars": 2305,
@@ -172,7 +170,7 @@
   {
     "venue": "Lichtblick",
     "website": "https://www.restaurant-lichtblick.at/",
-    "checked": "2026-10-26T11:12:53+00:00",
+    "checked": "2026-11-02T13:36:43+00:00",
     "http": 200,
     "final_url": "https://www.restaurant-lichtblick.at/",
     "title": "Lichtblick – Cafe Restaurant Terrasse",
@@ -202,13 +200,13 @@
       {
         "url": "https://www.restaurant-lichtblick.at/tageskarte",
         "http": 200,
-        "bytes": 94701,
+        "bytes": 93236,
         "kind": "pdf",
         "pages": 1,
         "status": "ok",
-        "chars": 1174,
+        "chars": 1235,
         "languages": {
-          "de": 11
+          "de": 12
         },
         "allergens": false
       },
@@ -249,7 +247,7 @@
   {
     "venue": "Strudel-Café Kröll",
     "website": "https://strudel-cafe.at/",
-    "checked": "2026-10-26T11:13:06+00:00",
+    "checked": "2026-11-02T13:36:54+00:00",
     "http": 200,
     "final_url": "https://strudel-cafe.at/",
     "title": "Strudel-Café Kröll in der Altstadt von Innsbruck",
@@ -293,7 +291,7 @@
   {
     "venue": "Fischerhäusl",
     "website": "https://www.fischerhaeusl.com/",
-    "checked": "2026-10-26T11:13:13+00:00",
+    "checked": "2026-11-02T13:37:01+00:00",
     "http": 200,
     "final_url": "https://www.fischerhaeusl.com/",
     "title": "Fischerhäusl Innsbruck | best local food | Innsbruck, Österreich",
@@ -313,17 +311,17 @@
       {
         "url": "https://www.fischerhaeusl.com/menus-1",
         "http": 200,
-        "bytes": 1214975,
+        "bytes": 1220610,
         "kind": "html",
         "status": "ok",
-        "chars": 713,
+        "chars": 724,
         "languages": {},
         "allergens": false
       },
       {
         "url": "https://www.fischerhaeusl.com/gift-card",
         "http": 200,
-        "bytes": 1382591,
+        "bytes": 1388459,
         "kind": "html",
         "status": "ok",
         "chars": 600,
@@ -335,7 +333,7 @@
   {
     "venue": "Café Katzung",
     "website": "https://www.cafe-katzung.at/",
-    "checked": "2026-10-26T11:13:19+00:00",
+    "checked": "2026-11-02T13:37:06+00:00",
     "http": 200,
     "final_url": "https://www.cafe-katzung.at/",
     "title": "Café & Konditorei Katzung | Altstadt Innsbruck | Cafe & Konditorei Katzung",
@@ -356,7 +354,7 @@
   {
     "venue": "Löwenhaus",
     "website": "https://www.loewenhaus.at/",
-    "checked": "2026-10-26T11:13:21+00:00",
+    "checked": "2026-11-02T13:37:08+00:00",
     "http": 200,
     "final_url": "https://www.loewenhaus.at/",
     "title": "Restaurant Innsbruck - Löwenhaus - Startseite",
@@ -427,7 +425,7 @@
   {
     "venue": "Café Munding",
     "website": "https://www.munding.at/",
-    "checked": "2026-10-26T11:13:25+00:00",
+    "checked": "2026-11-02T13:37:12+00:00",
     "http": 200,
     "final_url": "https://www.munding.at/",
     "title": "Munding - Konditorei-Cafe seit 1803 - Home",
@@ -446,7 +444,7 @@
   {
     "venue": "Café Valier",
     "website": "https://www.konditorei-innsbruck.at/",
-    "checked": "2026-10-26T11:13:27+00:00",
+    "checked": "2026-11-02T13:37:15+00:00",
     "http": 200,
     "final_url": "https://www.konditorei-innsbruck.at/",
     "title": "Cafe-Konditorei Valier - Konditorei mit Genuss in Innsbruck",
@@ -465,7 +463,7 @@
   {
     "venue": "Ottoburg",
     "website": "https://www.ottoburg.at/",
-    "checked": "2026-10-26T11:13:29+00:00",
+    "checked": "2026-11-02T13:37:17+00:00",
     "http": 200,
     "final_url": "https://www.ottoburg.at/under-construction.html",
     "title": "Ottoburg Innsbruck",
@@ -484,7 +482,7 @@
   {
     "venue": "Cammerlander",
     "website": "http://www.cammerlander.at/",
-    "checked": "2026-10-26T11:13:33+00:00",
+    "checked": "2026-11-02T13:37:22+00:00",
     "http": 200,
     "final_url": "http://www.cammerlander.at/",
     "title": "Webspace nicht gefunden!",
@@ -499,13 +497,13 @@
   {
     "venue": "Gasthaus Anich",
     "website": "",
-    "checked": "2026-10-26T11:13:35+00:00",
+    "checked": "2026-11-02T13:37:24+00:00",
     "site_status": "none"
   },
   {
     "venue": "Die Wilderin",
     "website": "https://www.diewilderin.at/",
-    "checked": "2026-10-26T11:13:35+00:00",
+    "checked": "2026-11-02T13:37:24+00:00",
     "http": 200,
     "final_url": "https://www.diewilderin.at/",
     "title": "Unser Zugang zur alpinen Kulinarik",
@@ -539,7 +537,7 @@
   {
     "venue": "Café Central",
     "website": "https://www.hotel-cafe-central.at/",
-    "checked": "2026-10-26T11:13:38+00:00",
+    "checked": "2026-11-02T13:37:27+00:00",
     "http": 200,
     "final_url": "https://www.hotel-cafe-central.at/",
     "title": "HOME - Hotel Café Central Innsbruck",
@@ -572,24 +570,24 @@
       {
         "url": "https://www.hotel-cafe-central.at/central-tageskarte/",
         "http": 200,
-        "bytes": 92153,
+        "bytes": 92071,
         "kind": "html",
         "status": "ok",
-        "chars": 2034,
+        "chars": 2006,
         "languages": {
-          "de": 19
+          "de": 20
         },
         "allergens": false
       },
       {
         "url": "https://www.hotel-cafe-central.at/central-speisekarte/",
         "http": 200,
-        "bytes": 92153,
+        "bytes": 92071,
         "kind": "html",
         "status": "ok",
-        "chars": 2034,
+        "chars": 2006,
         "languages": {
-          "de": 19
+          "de": 20
         },
         "allergens": false
       }
@@ -598,7 +596,7 @@
   {
     "venue": "Himal",
     "website": "https://www.himal.at/",
-    "checked": "2026-10-26T11:13:48+00:00",
+    "checked": "2026-11-02T13:37:35+00:00",
     "http": 200,
     "final_url": "https://himal.at/",
     "title": "HIMAL – Nepali Restaurant Innsbruck",
@@ -618,11 +616,11 @@
   {
     "venue": "Ludwig",
     "website": "https://www.ludwig-burger.at/",
-    "checked": "2026-10-26T11:13:51+00:00",
+    "checked": "2026-11-02T13:37:40+00:00",
     "http": 200,
     "final_url": "https://www.ludwig-burger.at/",
     "title": "Ludwig - Das Burger Restaurant | Innsbruck | Salzburg | Wien",
-    "chars": 13341,
+    "chars": 13437,
     "site_status": "live",
     "site_languages": [
       "de",
@@ -640,14 +638,14 @@
       {
         "url": "https://www.ludwig-burger.at/speisekarte",
         "http": 200,
-        "bytes": 1569134,
+        "bytes": 1669072,
         "kind": "pdf",
         "pages": 6,
         "status": "ok",
-        "chars": 17062,
+        "chars": 17258,
         "languages": {
-          "de": 40,
-          "en": 68,
+          "de": 35,
+          "en": 69,
           "fr": 7
         },
         "allergens": false
@@ -655,14 +653,14 @@
       {
         "url": "https://www.ludwig-burger.at/speisekarte/de",
         "http": 200,
-        "bytes": 233768,
+        "bytes": 234467,
         "kind": "pdf",
         "pages": 3,
         "status": "ok",
-        "chars": 8473,
+        "chars": 8559,
         "languages": {
-          "de": 39,
-          "en": 7,
+          "de": 34,
+          "en": 8,
           "fr": 6
         },
         "allergens": false
@@ -670,11 +668,11 @@
       {
         "url": "https://www.ludwig-burger.at/speisekarte/en",
         "http": 200,
-        "bytes": 1255907,
+        "bytes": 1356676,
         "kind": "pdf",
         "pages": 3,
         "status": "ok",
-        "chars": 8588,
+        "chars": 8698,
         "languages": {
           "en": 61
         },
@@ -685,7 +683,7 @@
   {
     "venue": "Café Bar Moustache",
     "website": "https://www.cafe-moustache.at/",
-    "checked": "2026-10-26T11:14:03+00:00",
+    "checked": "2026-11-02T13:37:51+00:00",
     "http": 200,
     "final_url": "https://www.cafe-moustache.at/",
     "title": "Cafe - Bar Moustache",
@@ -747,7 +745,7 @@
   {
     "venue": "Oniriq",
     "website": "https://www.oniriq.at/",
-    "checked": "2026-10-26T11:14:15+00:00",
+    "checked": "2026-11-02T13:38:02+00:00",
     "http": 200,
     "final_url": "https://www.oniriq.at/",
     "title": "ONIRIQ Gourmetrestaurant | 4 HAUBENRESTAURANT | INNSBRUCK",
@@ -766,7 +764,7 @@
       {
         "url": "https://www.oniriq.at/menü",
         "http": 200,
-        "bytes": 594095,
+        "bytes": 606297,
         "kind": "html",
         "status": "ok",
         "chars": 806,
@@ -778,7 +776,7 @@
   {
     "venue": "360 Grad",
     "website": "https://www.360-grad.at/",
-    "checked": "2026-10-26T11:14:16+00:00",
+    "checked": "2026-11-02T13:38:04+00:00",
     "http": 200,
     "final_url": "https://www.360-grad.at/",
     "title": "360 Grad – Cafe Weinbar Lounge",
@@ -810,31 +808,46 @@
   {
     "venue": "Weinhaus Happ",
     "website": "https://www.weinhaus-happ.at/",
-    "checked": "2026-10-26T11:14:22+00:00",
+    "checked": "2026-11-02T13:38:10+00:00",
     "http": 200,
     "final_url": "https://weinonaut.at/weinhaus-happ-innsbruck/",
     "title": "Weinhaus Happ Innsbruck: Geschichte & heutiger Status",
-    "chars": 18779,
+    "chars": 18810,
     "site_status": "live",
     "site_languages": [
       "de",
+      "es",
       "fr"
     ],
     "booking_signals": [
-      "reserv"
+      "reserv",
+      "tisch"
     ],
     "allergens_on_site": false,
     "off_topic_signals": [],
-    "menus": []
+    "menus": [
+      {
+        "url": "https://weinonaut.at/produkte/geschenkkarte-100-chf/",
+        "http": 200,
+        "bytes": 170324,
+        "kind": "html",
+        "status": "ok",
+        "chars": 10018,
+        "languages": {
+          "de": 65
+        },
+        "allergens": false
+      }
+    ]
   },
   {
     "venue": "Due Sicilie",
     "website": "https://www.duesicilie.at/",
-    "checked": "2026-10-26T11:14:25+00:00",
+    "checked": "2026-11-02T13:38:14+00:00",
     "http": 403,
     "final_url": "http://innspizzerie.at/",
     "title": "Attention Required! | Cloudflare",
-    "chars": 757,
+    "chars": 759,
     "site_status": "error",
     "site_languages": [
       "en"
